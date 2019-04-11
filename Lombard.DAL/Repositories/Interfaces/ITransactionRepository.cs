@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lombard.DAL.Repositories.Interfaces
 {
-    interface IItemRepository
+    public interface ITransactionRepository
     {
     }
 }
