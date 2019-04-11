@@ -13,6 +13,7 @@ namespace Lombard.BLL
         public Customer Customer { get; }
         public DateTime TransactionDate { get; }
         public double TotalPrice => CalculateTotalPrice();
+        public double TotalProfit => CalculateTotalProfit();
 
         public Transaction(int transactionID, TransactionType transactionType, Employee employee,
             Customer customer, DateTime transactionDate)
@@ -22,6 +23,11 @@ namespace Lombard.BLL
             Employee = employee;
             Customer = customer;
             TransactionDate = transactionDate;
+        }
+
+        private double CalculateTotalProfit()
+        {
+            throw new NotImplementedException();
         }
 
         public double CalculateTotalPrice()
