@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Lombard.BLL
 {
-    class Transactions
+    public enum TransactionType
     {
+
     }
 }
