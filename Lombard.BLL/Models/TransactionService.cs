@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Lombard.BLL
+namespace Lombard.BLL.Models
 {
-    class Transactions
+    public class TransactionService
     {
+
     }
 }
