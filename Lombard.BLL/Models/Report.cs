@@ -14,16 +14,9 @@ namespace Lombard.BLL.Models
             Stock = stock;
         }
 
-        private int ReportId { get; }
-        private double TotalRotation { get; }
-        private double TotalProfit { get; }
-        private int Stock { get; set; }
-
-        public int MissingStockItem(int stock)
-        {
-            Stock = stock;
-            return Stock;
-        }
-        
+        public int ReportId { get; }
+        public double TotalRotation { get; }
+        public double TotalProfit { get; }
+        public int Stock { get; set; }
     }
 }
