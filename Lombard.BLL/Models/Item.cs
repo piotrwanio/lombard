@@ -13,15 +13,14 @@ namespace Lombard.BLL
             PurchasePrice = purchasePrice;
             Quantity = quantity;
             Unit = unit;
-        }       
+        }
 
-        public int ItemID { get; private set; }
-        public string Name { get; private set; }
-        public decimal PurchasePrice { get; private set; }
-        public double Quantity { get; private set; }
-        public string Unit { get; private set; }
-
-        public decimal SellPrice => SetSellingPrice();
+        public int ItemID { get; set; }
+        public string Name { get; set; }
+        public decimal PurchasePrice { get;  set; }
+        public double Quantity { get;  set; }
+        public string Unit { get;  set; }
+        public decimal SellingPrice { get; set; }
 
         public void UpdateQuantity(int quantity)
         {
@@ -29,14 +28,14 @@ namespace Lombard.BLL
             Quantity = quantity;
         }
 
-        public decimal SetSellingPrice()
+        public void SetSellingPrice(decimal sellingPrice)
         {
-            throw new NotImplementedException();
+            SellingPrice = sellingPrice;
         }
 
         public decimal CalculateProfit()
         {
-            throw new NotImplementedException();
+            return SellingPrice - PurchasePrice;
         }
     }
 }
