@@ -8,9 +8,19 @@ namespace Lombard.DAL.Repositories.Implementations
 {
     public class CustomerRepository : ICustomerRepository
     {
+        public bool AddCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteCustomer(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Customer GetCustomer(int id)
         {
-            return new Customer();
-        } 
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,5 +9,7 @@ namespace Lombard.DAL.Repositories.Interfaces
     public interface ICustomerRepository
     {
         Customer GetCustomer(int id);
+        bool DeleteCustomer(int id);
+        bool AddCustomer(Customer customer);
     }
 }
