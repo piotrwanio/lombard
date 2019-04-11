@@ -25,9 +25,9 @@ namespace Lombard.BLL
             TransactionDate = transactionDate;
         }
 
-        private double CalculateTotalProfit()
+        public double CalculateTotalProfit()
         {
-            throw new NotImplementedException();
+            return 1000;
         }
 
         public double CalculateTotalPrice()

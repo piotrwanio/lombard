@@ -6,6 +6,7 @@ namespace Lombard.BLL
 {
     public enum TransactionType
     {
-
+        Sell,
+        Purchase
     }
 }
