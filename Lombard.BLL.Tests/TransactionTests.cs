@@ -12,7 +12,7 @@ namespace Lombard.BLL.Tests
         public void CalculateTotalProfit_ValidTransaction_Success()
         {
             //arrange
-            Transaction transaction = new Transaction(1, TransactionType.Purchase, 
+            var transaction = new Transaction(1, TransactionType.Purchase, 
                 new Employee { EmpoyeeID = 1, FirstName = "Imię", LastName = "Nazwisko"},
                 new Customer { }, new DateTime { }, new List<Item> {
                     new Item(1, "Łódka", 5000, 1, "sztuka" ),
@@ -30,7 +30,7 @@ namespace Lombard.BLL.Tests
         public void CalculateTotalPrice_ValidTransaction_Success()
         {
             //arrange
-            Transaction transaction = new Transaction(1, TransactionType.Purchase,
+            var transaction = new Transaction(1, TransactionType.Purchase,
                 new Employee { EmpoyeeID = 1, FirstName = "Imię", LastName = "Nazwisko" },
                 new Customer { }, new DateTime { }, new List<Item> {
                     new Item(1, "Łódka", 5000, 1, "sztuka" ),

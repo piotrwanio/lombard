@@ -37,7 +37,7 @@ namespace Lombard.BLL
 
             foreach(var item in _items)
             {
-                totalPrice += item.SellPrice;
+                totalPrice += item.SellingPrice;
             }
 
             return totalPrice;
