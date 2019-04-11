@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Lombard.BLL.Services;
 using NUnit.Framework;
 
 namespace Lombard.BLL.Tests
 {
     [TestFixture]
-    public class ItemTests
+    public class ItemServiceTests
     {
         [TestCase(5)]
         [TestCase(9)]
@@ -14,7 +15,8 @@ namespace Lombard.BLL.Tests
         public void UpdateQuantity_EmployeeUpdatingQuantity_UpdatingQuantity(int quantity)
         {
             var item = new Item(45,"Ryż",450M,4,"KG");
-            item.UpdateQuantity(quantity);
+            var itemService = new ItemService(item);
+            itemService.UpdateQuantity(quantity);
             Assert.That(item.Quantity, Is.EqualTo(quantity));
         }
 
@@ -23,8 +25,9 @@ namespace Lombard.BLL.Tests
         public void SetSellingPrice_EmployeeSetingItemSellingPrice_SellingPriceIsSet()
         {
             var item = new Item(45, "Ryż", 450M, 4, "KG");
+            var itemService = new ItemService(item);
             var expected = 560M;
-            item.SetSellingPrice(expected);
+            itemService.SetSellingPrice(expected);
             Assert.That(item.SellingPrice, Is.EqualTo(expected));
         }
 
@@ -34,7 +37,8 @@ namespace Lombard.BLL.Tests
         public void SetSellingPrice_EmployeesSetingItemSellingPrice_SellingPriceIsSet(decimal sellingPrice)
         {
             var item = new Item(45, "Ryż", 450M, 4, "KG");
-            item.SetSellingPrice(sellingPrice);
+            var itemService = new ItemService(item);
+            itemService.SetSellingPrice(sellingPrice);
             Assert.That(item.SellingPrice, Is.EqualTo(sellingPrice));
         }
 
@@ -42,9 +46,10 @@ namespace Lombard.BLL.Tests
         public void CalculateProfit_WhenCalled_ReturnsProfit()
         {
             var item = new Item(45, "Ryż", 450M, 4, "KG");
-            item.SetSellingPrice(455);
+            var itemService = new ItemService(item);
+            itemService.SetSellingPrice(455);
             var expected = 5M;
-            var actual = item.CalculateProfit();
+            var actual = itemService.CalculateProfit();
             Assert.That(actual, Is.EqualTo(expected));
         }
 
@@ -54,8 +59,9 @@ namespace Lombard.BLL.Tests
         public void CalculateProfit_WhenCalled_ReturnsProfits(decimal sellingPrice, decimal profit)
         {
             var item = new Item(45, "Ryż", 450M, 4, "KG");
-            item.SetSellingPrice(sellingPrice);
-            var actual = item.CalculateProfit();
+            var itemService = new ItemService(item);
+            itemService.SetSellingPrice(sellingPrice);
+            var actual = itemService.CalculateProfit();
             Assert.That(actual, Is.EqualTo(profit));
         }
     }
