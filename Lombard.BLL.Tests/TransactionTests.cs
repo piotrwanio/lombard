@@ -9,18 +9,39 @@ namespace Lombard.BLL.Tests
     public class TransactionTests
     {
         [Test]
-        public void CalculateTotalProfit_Success()
+        public void CalculateTotalProfit_ValidTransaction_Success()
         {
             //arrange
             Transaction transaction = new Transaction(1, TransactionType.Purchase, 
                 new Employee { EmpoyeeID = 1, FirstName = "Imię", LastName = "Nazwisko"},
-                new Customer { }, new DateTime { });
+                new Customer { }, new DateTime { }, new List<Item> {
+                    new Item(1, "Łódka", 5000, 1, "sztuka" ),
+                    new Item(1, "Łódka", 5000, 1, "sztuka" )
+                });
 
             //act
             var result = transaction.CalculateTotalProfit();
 
             //asserts
             Assert.AreEqual(1000, result);
+        }
+
+        [Test]
+        public void CalculateTotalPrice_ValidTransaction_Success()
+        {
+            //arrange
+            Transaction transaction = new Transaction(1, TransactionType.Purchase,
+                new Employee { EmpoyeeID = 1, FirstName = "Imię", LastName = "Nazwisko" },
+                new Customer { }, new DateTime { }, new List<Item> {
+                    new Item(1, "Łódka", 5000, 1, "sztuka" ),
+                    new Item(1, "Łódka", 5000, 1, "sztuka" )
+                });
+
+            //act
+            var result = transaction.CalculateTotalPrice();
+
+            //asserts
+            Assert.AreEqual(10000, result);
         }
     }
 }

@@ -12,27 +12,35 @@ namespace Lombard.BLL
         public Employee Employee { get; }
         public Customer Customer { get; }
         public DateTime TransactionDate { get; }
-        public double TotalPrice => CalculateTotalPrice();
-        public double TotalProfit => CalculateTotalProfit();
+        public decimal TotalPrice => CalculateTotalPrice();
+        public decimal TotalProfit => CalculateTotalProfit();
 
         public Transaction(int transactionID, TransactionType transactionType, Employee employee,
-            Customer customer, DateTime transactionDate)
+            Customer customer, DateTime transactionDate, IEnumerable<Item> items)
         {
             TransactionID = transactionID;
             TransactionType = transactionType;
             Employee = employee;
             Customer = customer;
             TransactionDate = transactionDate;
+            _items = items;
         }
 
-        public double CalculateTotalProfit()
+        public decimal CalculateTotalProfit()
         {
             return 1000;
         }
 
-        public double CalculateTotalPrice()
+        public decimal CalculateTotalPrice()
         {
-            throw new NotImplementedException();
+            decimal totalPrice = 0;
+
+            foreach(var item in _items)
+            {
+                totalPrice += item.SellPrice;
+            }
+
+            return totalPrice;
         }
     }
 }
