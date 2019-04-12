@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Lombard.DAL.Models
 {
+    [Table("Transactions")]
     public class Transaction
     {
-        public IEnumerable<Item> Items { get; }
-        public int TransactionID { get; }
-        public TransactionType TransactionType { get; }
-        public Employee Employee { get; }
-        public Customer Customer { get; }
-        public DateTime TransactionDate { get; }
+        [Key]
+        public int? TransactionId { get; set; }
+        public virtual IEnumerable<Item> Items { get; set; }
+        public TransactionType TransactionType { get; set; }
+        public int EmployeeId { get; set; }
+        public int CustomerId { get; set; }
+        public DateTime TransactionDate { get; set; }
+
+        [ForeignKey(nameof(EmployeeId))]
+        public virtual Employee Employee { get; set; }
         
-        public Transaction(int transactionID, TransactionType transactionType, Employee employee,
-            Customer customer, DateTime transactionDate, IEnumerable<Item> items)
-        {
-            TransactionID = transactionID;
-            TransactionType = transactionType;
-            Employee = employee;
-            Customer = customer;
-            TransactionDate = transactionDate;
-            Items = items;
-        }
+        [ForeignKey(nameof(CustomerId))]
+        public virtual Customer Customer { get; set; }
+
     }
 }
