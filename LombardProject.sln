@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombard.BLL.Tests", "Lombar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombard.DAL", "Lombard.DAL\Lombard.DAL.csproj", "{53B8ABE4-A907-4D0E-A3E6-FA2C2EE5BF69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombard.API", "Lombard.API\Lombard.API.csproj", "{9F5D174B-34A7-4F74-968B-5B35A1360B21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombard.API", "Lombard.API\Lombard.API.csproj", "{9F5D174B-34A7-4F74-968B-5B35A1360B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombard.DAL.Tests", "Lombard.DAL.Tests\Lombard.DAL.Tests.csproj", "{ABE5396E-5A6E-4151-9938-6FECD54FCBA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,12 +37,17 @@ Global
 		{9F5D174B-34A7-4F74-968B-5B35A1360B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F5D174B-34A7-4F74-968B-5B35A1360B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F5D174B-34A7-4F74-968B-5B35A1360B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE5396E-5A6E-4151-9938-6FECD54FCBA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE5396E-5A6E-4151-9938-6FECD54FCBA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE5396E-5A6E-4151-9938-6FECD54FCBA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE5396E-5A6E-4151-9938-6FECD54FCBA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5134A734-1259-4D5A-9AD6-23E93A443EBD} = {6A896732-EE22-41E6-B280-A99B39BCDECF}
+		{ABE5396E-5A6E-4151-9938-6FECD54FCBA4} = {6A896732-EE22-41E6-B280-A99B39BCDECF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E7C9F1D-C784-4DFC-B328-EEA2B096B1F7}
