@@ -12,8 +12,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombard.DAL", "Lombard.DAL\Lombard.DAL.csproj", "{53B8ABE4-A907-4D0E-A3E6-FA2C2EE5BF69}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombard.API", "Lombard.API\Lombard.API.csproj", "{9F5D174B-34A7-4F74-968B-5B35A1360B21}"
+	ProjectSection(ProjectDependencies) = postProject
+		{53B8ABE4-A907-4D0E-A3E6-FA2C2EE5BF69} = {53B8ABE4-A907-4D0E-A3E6-FA2C2EE5BF69}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombard.DAL.Tests", "Lombard.DAL.Tests\Lombard.DAL.Tests.csproj", "{810DD723-8720-4BD0-A16D-A309D20F1FB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombard.DAL.Tests", "Lombard.DAL.Tests\Lombard.DAL.Tests.csproj", "{810DD723-8720-4BD0-A16D-A309D20F1FB1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{53B8ABE4-A907-4D0E-A3E6-FA2C2EE5BF69} = {53B8ABE4-A907-4D0E-A3E6-FA2C2EE5BF69}
 	EndProjectSection

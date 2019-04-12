@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lombard.BLL\Lombard.BLL.csproj" />
+    <ProjectReference Include="..\Lombard.DAL\Lombard.DAL.csproj" />
   </ItemGroup>
 
 </Project>
