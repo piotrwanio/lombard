@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Lombard.BLL.Models
+namespace Lombard.DAL.Models
 {
     public class Report
     {

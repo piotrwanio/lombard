@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Lombard.DAL.Repositories.Interfaces
+namespace Lombard.DAL.Repositories.Implementations
 {
-    interface IItemRepository
+    public class EmployeeRepository
     {
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Lombard.BLL
+﻿namespace Lombard.DAL.Models
 {
     public class Employee : Person
     {
