@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Lombard.DAL.Models
 {
+    [Table("Items")]
     public class Item
-    {
-        public Item(int itemID, string name, decimal purchasePrice, double quantity, string unit)
-        {
-            ItemID = itemID;
-            Name = name;
-            PurchasePrice = purchasePrice;
-            Quantity = quantity;
-            Unit = unit;
-        }
-
-        public int ItemID { get; set; }
+    { 
+        public int? ItemId { get; set; }
         public string Name { get; set; }
         public decimal PurchasePrice { get; set; }
         public double Quantity { get; set; }
