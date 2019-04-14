@@ -8,6 +8,12 @@ namespace Lombard.DAL.Repositories.Implementations
 {
     public class CustomerRepository : ICustomerRepository
     {
+        EFDbContext _context;
+        public CustomerRepository(EFDbContext context)
+        {
+            _context = context;
+        }
+
         public bool AddCustomer(Customer customer)
         {
             throw new NotImplementedException();
