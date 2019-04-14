@@ -1,4 +1,5 @@
 ﻿using Lombard.DAL.Models;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,14 @@ namespace Lombard.DAL
     {
         public DbSet<Item> Items { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<TransactionItem> TransactionsItems { get; set; }
         public DbSet<Report> Reports { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Customer> Customers { get; set; }
+
+        public EFDbContext(DbContextOptions<EFDbContext> options) : base(options)
+        {
+        }
 
         public EFDbContext()
         {
@@ -21,7 +27,7 @@ namespace Lombard.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=Database.db");
+            optionsBuilder.UseSqlite("Data Source=e:/Database.db");
         }
     }
 }

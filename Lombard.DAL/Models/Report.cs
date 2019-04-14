@@ -14,9 +14,9 @@ namespace Lombard.DAL.Models
             Stock = stock;
         }
 
-        public int ReportId { get; }
-        public double TotalRotation { get; }
-        public double TotalProfit { get; }
+        public int ReportId { get; set; }
+        public double TotalRotation { get; set; }
+        public double TotalProfit { get; set; }
         public int Stock { get; set; }
     }
 }
