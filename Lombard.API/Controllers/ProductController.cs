@@ -22,11 +22,28 @@ namespace Lombard.API.Controllers
             _itemRepository = itemRepository;
         }
 
-        [HttpGet("get/{id}")]
+        [HttpGet("{id}")]
         public ActionResult<Item> GetItemById(int id)
         {
             Item item = _itemRepository.GetItemById(id);
             return item;
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult<Item> DeleteItemById(int id)
+        {
+            Item item = _itemRepository.GetItemById(id);
+            _itemRepository.DeleteItem(item);
+
+            return item;
+        }
+
+        [HttpGet("")]
+        public ActionResult<List<Item>> GetAllItems(int id)
+        {
+            List<Item> item = _itemRepository.GetItems();
+            return item;
+        }
+
     }
 }

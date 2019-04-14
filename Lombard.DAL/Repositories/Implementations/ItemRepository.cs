@@ -42,7 +42,7 @@ namespace Lombard.DAL.Repositories.Implementations
         public List<Item> GetItems()
         {
             return (from i in _context.Items
-                         select i).ToList();
+                         select i)?.ToList();
         }
 
         public bool UpdateItem(Item item)
