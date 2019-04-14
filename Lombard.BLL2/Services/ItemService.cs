@@ -1,4 +1,10 @@
-﻿namespace Lombard.BLL.Services
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Lombard.BLL.Models;
+using Lombard.DAL;
+
+namespace Lombard.BLL.Services
 {
     public class ItemService
     {

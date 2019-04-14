@@ -1,4 +1,4 @@
-﻿namespace Lombard.BLL
+﻿namespace Lombard.BLL.Models
 {
     public class Customer : Person
     {

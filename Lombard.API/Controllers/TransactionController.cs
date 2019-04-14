@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Lombard.DAL.Models;
+﻿using Lombard.DAL.Models;
 using Lombard.DAL.Repositories.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using Lombard.BLL.Providers;
 
 namespace Lombard.API.Controllers
 {
@@ -13,17 +10,17 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class TransactionController : ControllerBase
     {
-        private ITransactionRepository _transactionRepository;
+        private readonly TransactionProvider _transactionProvider;
 
-        public TransactionController(ITransactionRepository transactionRepository)
+        public TransactionController(TransactionProvider transactionRepository)
         {
-            _transactionRepository = transactionRepository;
+            _transactionProvider = transactionRepository;
         }
 
         [HttpPost("")]
         public void AddTransaction(Transaction transaction)
         {
-            _transactionRepository.AddTransaction(transaction);
+            _transactionProvider.AddTransaction(transaction);
         }
 
         [HttpGet("{kind}")]
@@ -42,8 +39,7 @@ namespace Lombard.API.Controllers
 
             if(type != TransactionType.None)
             {
-            List<Transaction> transactions = _transactionRepository.GetTransactionsByType(type);
-            return transactions;
+            return _transactionProvider.GetTransactionsByType(type);
             }
 
             return BadRequest();
@@ -52,8 +48,7 @@ namespace Lombard.API.Controllers
         [HttpGet("")]
         public ActionResult<List<Transaction>> GetAllTransactions()
         {
-            List<Transaction> transactions = _transactionRepository.GetTransactions();
-            return transactions;
+            return _transactionProvider.GetTransactions();
         }
     }
 }
