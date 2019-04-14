@@ -45,7 +45,7 @@ namespace Lombard.API.Controllers
             return item;
         }
 
-        [HttpGet]
+        [HttpGet("test")]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "product1", "product2" };
