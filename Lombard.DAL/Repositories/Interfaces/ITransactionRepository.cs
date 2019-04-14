@@ -13,7 +13,7 @@ namespace Lombard.DAL.Repositories.Interfaces
         bool AddTransaction(Transaction transaction);
         bool UpdateTransaction(Transaction transaction);
 
-        List<Transaction> GetAllTransactions();
+        List<Transaction> GetTransactions();
         List<Transaction> GetTransactionsByType(TransactionType type);
         List<Transaction> GetTransactionsByClient(Customer customer);
         List<Transaction> GetTransactionByEmployee(Employee employee);

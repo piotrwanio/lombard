@@ -38,6 +38,21 @@ namespace Lombard.DAL.Repositories.Implementations
             return true;
         }
 
+        public bool DeleteTransaction(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Transaction GetTransaction(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Transaction> GetTransactionByEmployee(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Transaction> GetTransactions()
         {
             List<Transaction> transactions = (from t in _context.Transactions
@@ -59,6 +74,21 @@ namespace Lombard.DAL.Repositories.Implementations
             }
 
             return transactions;
+        }
+
+        public List<Transaction> GetTransactionsByClient(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Transaction> GetTransactionsByType(TransactionType type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateTransaction(Transaction transaction)
+        {
+            throw new NotImplementedException();
         }
     }
 }
