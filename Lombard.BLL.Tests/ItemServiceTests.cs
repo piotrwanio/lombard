@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Lombard.BLL.Models;
 using Lombard.BLL.Services;
 using NUnit.Framework;
 

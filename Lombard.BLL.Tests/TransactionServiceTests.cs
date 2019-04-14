@@ -1,4 +1,5 @@
-﻿using Lombard.BLL.Services;
+﻿using Lombard.BLL.Models;
+using Lombard.BLL.Services;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
