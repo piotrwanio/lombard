@@ -45,5 +45,10 @@ namespace Lombard.API.Controllers
             return item;
         }
 
+        [HttpGet]
+        public ActionResult<IEnumerable<string>> Get()
+        {
+            return new string[] { "product1", "product2" };
+        }
     }
 }
