@@ -1,5 +1,7 @@
 ﻿using Lombard.DAL.Models;
 using Lombard.DAL.Repositories.Implementations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -18,7 +20,7 @@ namespace Lombard.DAL.Tests
         public void AddTransaction_CorrectTransaction_Success()
         {
             //arrange
-            EFDbContext context = new EFDbContext();
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
             TransactionRepository transactionRepository = new TransactionRepository(context); 
             ItemRepository  itemRepository = new ItemRepository(context); 
 
@@ -36,18 +38,18 @@ namespace Lombard.DAL.Tests
                 PurchasePrice = 888,
                 Quantity = 8
             };
-
-            Item item3 = context.Items.Find(item2.ItemId);
-
+            
             Transaction transaction = new Transaction
             {
-                Items = new List<Item> { item, item3 },
+                Items = new List<Item> { item, item2 },
                 Customer = new Customer { FirstName = "ss"},
                 Employee = new Employee { FirstName = "ss"}
             };
 
             //act
             var result = transactionRepository.AddTransaction(transaction);
+
+            var get = transactionRepository.GetTransaction(transaction.TransactionId.Value);
 
             var delete = transactionRepository.DeleteTransaction(transaction);
 
@@ -67,6 +69,27 @@ namespace Lombard.DAL.Tests
 
             //asserts
             Assert.NotNull(result);
+        }
+
+        private static DbContextOptions<EFDbContext> CreateNewContextOptions()
+        {
+            // The key to keeping the databases unique and not shared is 
+            // generating a unique db name for each.
+            string dbName = Guid.NewGuid().ToString();
+
+            // Create a fresh service provider, and therefore a fresh 
+            // InMemory database instance.
+            var serviceProvider = new ServiceCollection()
+                .AddEntityFrameworkInMemoryDatabase()
+                .BuildServiceProvider();
+
+            // Create a new options instance telling the context to use an
+            // InMemory database and the new service provider.
+            var builder = new DbContextOptionsBuilder<EFDbContext>();
+            builder.UseInMemoryDatabase(dbName)
+                   .UseInternalServiceProvider(serviceProvider);
+
+            return builder.Options;
         }
     }
 
