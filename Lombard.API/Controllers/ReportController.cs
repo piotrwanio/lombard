@@ -9,32 +9,32 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class ReportController : ControllerBase
     {
-        private readonly ReportProvider _reportProvider;
+        private readonly IReportProvider _reportProvider;
 
-        public ReportController(ReportProvider reportProvider)
+        public ReportController(IReportProvider reportProvider)
         {
             _reportProvider = reportProvider;
         }
 
-        [HttpGet("")]
+        [HttpGet("rot/")]
         public ActionResult<decimal> GetTotalRotation()
         {
             return _reportProvider.GetTotalProfit();
         }
 
-        [HttpGet("")]
+        [HttpGet("profit/")]
         public ActionResult<decimal> GetTotalProfit()
         {
             return _reportProvider.GetTotalProfit();
         }
 
-        [HttpGet("")]
+        [HttpGet("stock/")]
         public ActionResult<IList<Item>> GetStockStatus()
         {
             return new List<Item>();
         }
 
-        [HttpGet("")]
+        [HttpGet("missing/")]
         public ActionResult<IList<Item>> GetMissingItems()
         {
             return new List<Item>();
