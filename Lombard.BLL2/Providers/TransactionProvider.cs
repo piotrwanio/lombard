@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Lombard.DAL.Models;
+﻿using Lombard.DAL.Models;
 using Lombard.DAL.Repositories.Interfaces;
+using System.Collections.Generic;
 
 namespace Lombard.BLL.Providers
 {

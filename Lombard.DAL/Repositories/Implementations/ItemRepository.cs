@@ -10,7 +10,7 @@ namespace Lombard.DAL.Repositories.Implementations
 {
     public class ItemRepository : IItemRepository
     {
-        EFDbContext _context;
+        private readonly EFDbContext _context;
 
         public ItemRepository(EFDbContext context)
         {

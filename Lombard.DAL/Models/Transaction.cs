@@ -16,12 +16,5 @@ namespace Lombard.DAL.Models
         public int EmployeeId { get; set; }
         public int CustomerId { get; set; }
         public DateTime TransactionDate { get; set; }
-
-        [ForeignKey(nameof(EmployeeId))]
-        public virtual Employee Employee { get; set; }
-        
-        [ForeignKey(nameof(CustomerId))]
-        public virtual Customer Customer { get; set; }
-
     }
 }

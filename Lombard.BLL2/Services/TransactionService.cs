@@ -1,7 +1,4 @@
-﻿using Lombard.BLL.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Lombard.DAL.Models;
 
 namespace Lombard.BLL.Services
 {

@@ -1,8 +1,6 @@
 ﻿using Lombard.DAL.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
-
 
 namespace Lombard.DAL.Repositories.Interfaces
 {
@@ -16,7 +14,5 @@ namespace Lombard.DAL.Repositories.Interfaces
         List<Transaction> GetTransactions();
         List<Transaction> GetTransactionsInTimeRange(DateTime dateFrom, DateTime dateTo);
         List<Transaction> GetTransactionsByType(TransactionType type);
-        List<Transaction> GetTransactionsByClient(Customer customer);
-        List<Transaction> GetTransactionByEmployee(Employee employee);
     }
 }

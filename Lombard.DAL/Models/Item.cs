@@ -7,7 +7,7 @@ namespace Lombard.DAL.Models
 {
     [Table("Items")]
     public class Item
-    { 
+    {
         public int? ItemId { get; set; }
         public string Name { get; set; }
         public decimal PurchasePrice { get; set; }

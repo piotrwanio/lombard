@@ -1,4 +1,4 @@
-﻿using Lombard.BLL.Models;
+﻿using Lombard.DAL.Models;
 using Lombard.BLL.Services;
 using NUnit.Framework;
 using System;
@@ -13,12 +13,8 @@ namespace Lombard.BLL.Tests
         [Test]
         public void CalculateTotalProfit_ValidTransaction_Success()
         {
-            var transaction = new Transaction(1, TransactionType.Purchase,
-                new Employee { EmpoyeeID = 1, FirstName = "Imię", LastName = "Nazwisko" },
-                new Customer { }, new DateTime { }, new List<Item> {
-                    new Item(1, "Łódka", 5000, 1, "sztuka" ,6000 ),
-                    new Item(1, "Łódka", 5000, 1, "sztuka",6000 )
-                });
+            var transaction = new Transaction();
+               
 
             var transactionService = new TransactionService(transaction);
             var expected = transactionService.CalculateTotalProfit();
@@ -29,12 +25,7 @@ namespace Lombard.BLL.Tests
         [Test]
         public void CalculateTotalPrice_ValidTransaction_Success()
         {
-            var transaction = new Transaction(1, TransactionType.Purchase,
-                new Employee { EmpoyeeID = 1, FirstName = "Imię", LastName = "Nazwisko" },
-                new Customer { }, new DateTime { }, new List<Item> {
-                    new Item(1, "Łódka", 5000, 1, "sztuka",6000 ),
-                    new Item(1, "Łódka", 5000, 1, "sztuka",6000 )
-                });
+            var transaction = new Transaction();
 
             var transactionService = new TransactionService(transaction);
             var expected = transactionService.CalculateTotalPrice();

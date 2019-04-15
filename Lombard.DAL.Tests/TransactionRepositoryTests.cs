@@ -41,9 +41,7 @@ namespace Lombard.DAL.Tests
             
             Transaction transaction = new Transaction
             {
-                Items = new List<Item> { item, item2 },
-                Customer = new Customer { FirstName = "ss"},
-                Employee = new Employee { FirstName = "ss"}
+                Items = new List<Item> { item, item2 },              
             };
 
             //act

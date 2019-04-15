@@ -1,4 +1,4 @@
-﻿using Lombard.BLL.Models;
+﻿using Lombard.DAL.Models;
 
 namespace Lombard.BLL.Services
 {
