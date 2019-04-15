@@ -19,19 +19,27 @@ namespace Lombard.DAL.Repositories.Implementations
 
         public bool AddTransaction(Transaction transaction)
         {
+            var items = ((List<Item>)transaction.Items);
+
+            transaction.Items = null;
             _context.Transactions.Add(transaction);
 
-            var items = ((List<Item>)transaction.Items);
 
             foreach (var item in items)
             {
-                Item itemTest = _context.Items.Find(item?.ItemId);
-                if (itemTest == null) itemTest = item;
+                int id = item.ItemId.GetValueOrDefault();
+                Item itemInput = null;
+
+                if(id == 0)
+                {
+                    itemInput = item;
+                }
 
                 _context.TransactionsItems.Add(
                     new TransactionItem
                     {
-                        Item = itemTest,
+                        ItemId = id,
+                        Item = itemInput,
                         Transaction = transaction
                     }
                     );
