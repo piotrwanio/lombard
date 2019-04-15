@@ -27,7 +27,7 @@ namespace Lombard.BLL.Providers
 
         public List<Item> GetItems()
         {
-            throw new NotImplementedException();
+            return _itemRepository.GetItems();
         }
     }
 }

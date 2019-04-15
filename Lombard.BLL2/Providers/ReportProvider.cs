@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Lombard.BLL.Providers
 {
-    public class ReportProvider
+    public class ReportProvider : IReportProvider
     {
         public decimal GetTotalRotation()
         {

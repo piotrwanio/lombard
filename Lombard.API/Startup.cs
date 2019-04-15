@@ -42,6 +42,7 @@ namespace Lombard.API
             services.AddScoped<ITransactionRepository, TransactionRepository>();
             services.AddScoped<ITransactionProvider, TransactionProvider>();
             services.AddScoped<IItemProvider, ItemProvider>();
+            services.AddScoped<IReportProvider, ReportProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
