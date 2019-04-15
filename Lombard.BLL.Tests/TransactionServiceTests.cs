@@ -10,27 +10,27 @@ namespace Lombard.BLL.Tests
     [TestFixture]
     public class TransactionServiceTests
     {
-        [Test]
-        public void CalculateTotalProfit_ValidTransaction_Success()
-        {
-            var transaction = new Transaction();
+        //[Test]
+        //public void CalculateTotalProfit_ValidTransaction_Success()
+        //{
+        //    var transaction = new Transaction();
                
 
-            var transactionService = new TransactionService(transaction);
-            var expected = transactionService.CalculateTotalProfit();
+        //    var transactionService = new TransactionService(transaction);
+        //    var expected = transactionService.CalculateTotalProfit();
 
-            Assert.AreEqual(1000, expected);
-        }
+        //    Assert.AreEqual(1000, expected);
+        //}
 
-        [Test]
-        public void CalculateTotalPrice_ValidTransaction_Success()
-        {
-            var transaction = new Transaction();
+        //[Test]
+        //public void CalculateTotalPrice_ValidTransaction_Success()
+        //{
+        //    var transaction = new Transaction();
 
-            var transactionService = new TransactionService(transaction);
-            var expected = transactionService.CalculateTotalPrice();
+        //    var transactionService = new TransactionService(transaction);
+        //    var expected = transactionService.CalculateTotalPrice();
 
-            Assert.AreEqual(12000, expected);
-        }
+        //    Assert.AreEqual(12000, expected);
+        //}
     }
 }

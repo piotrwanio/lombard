@@ -1,4 +1,4 @@
-﻿using Lombard.BLL.Providers;
+﻿using Lombard.BLL.Services;
 using Lombard.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -9,12 +9,12 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class ItemController : ControllerBase
     {
-        private readonly IItemProvider _itemProvider;
+        private readonly IItemService _itemProvider;
 
-        public ItemController(IItemProvider itemProvider)
+        public ItemController(IItemService itemProvider)
         {
             _itemProvider = itemProvider;
-        }       
+        }
 
         [HttpGet("{id}")]
         public ActionResult<Item> GetItemById(int id)
@@ -35,12 +35,6 @@ namespace Lombard.API.Controllers
         public ActionResult<List<Item>> GetAllItems()
         {
             return _itemProvider.GetItems();
-        }
-
-        [HttpGet("test")]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "product1", "product2" };
         }
     }
 }

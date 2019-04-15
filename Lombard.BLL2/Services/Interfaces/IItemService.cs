@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Lombard.DAL.Models;
 
-namespace Lombard.BLL.Providers
+namespace Lombard.BLL.Services
 {
-    public interface IItemProvider
+    public interface IItemService
     {
         void DeleteItem(Item item);
         Item GetItemById(int id);

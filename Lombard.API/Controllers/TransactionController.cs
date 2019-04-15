@@ -2,7 +2,7 @@
 using Lombard.DAL.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using Lombard.BLL.Providers;
+using Lombard.BLL.Services;
 
 namespace Lombard.API.Controllers
 {
@@ -10,9 +10,9 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class TransactionController : ControllerBase
     {
-        private readonly ITransactionProvider _transactionProvider;
+        private readonly ITransactionService _transactionProvider;
 
-        public TransactionController(ITransactionProvider transactionRepository)
+        public TransactionController(ITransactionService transactionRepository)
         {
             _transactionProvider = transactionRepository;
         }

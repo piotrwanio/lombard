@@ -1,35 +1,28 @@
 ﻿using Lombard.DAL.Models;
-using System;
+using System.Collections.Generic;
 
 namespace Lombard.BLL.Services
 {
-    public class ReportService
+    public class ReportService : IReportService
     {
-        private readonly Report _report;
-
-        public ReportService(Report report)
+        public decimal GetTotalRotation()
         {
-            _report = report;
+            return 1_000_000M;
         }
 
-        public void GetTotalRotation()
+        public decimal GetTotalProfit()
         {
-            throw new NotImplementedException();
+            return 500_000M;
         }
 
-        public void GetTotalProfit()
+        public IList<Item> GetStockStatus()
         {
-            throw new NotImplementedException();
+            return new List<Item>();
         }
 
-        public void GetStockStatus()
+        public IList<Item> GetMissingItems()
         {
-            throw new NotImplementedException();
-        }
-
-        public void GetMissingItems()
-        {
-            throw new NotImplementedException();
+            return new List<Item>();
         }
     }
 }

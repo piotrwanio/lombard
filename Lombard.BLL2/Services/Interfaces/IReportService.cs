@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Lombard.DAL.Models;
 
-namespace Lombard.BLL.Providers
+namespace Lombard.BLL.Services
 {
-    public interface IReportProvider
+    public interface IReportService
     {
         IList<Item> GetMissingItems();
         IList<Item> GetStockStatus();

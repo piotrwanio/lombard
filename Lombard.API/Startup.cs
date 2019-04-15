@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Lombard.BLL.Providers;
+using Lombard.BLL.Services;
 using Lombard.DAL;
 using Lombard.DAL.Repositories.Implementations;
 using Lombard.DAL.Repositories.Interfaces;
@@ -40,9 +40,10 @@ namespace Lombard.API
 
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<ITransactionRepository, TransactionRepository>();
-            services.AddScoped<ITransactionProvider, TransactionProvider>();
-            services.AddScoped<IItemProvider, ItemProvider>();
-            services.AddScoped<IReportProvider, ReportProvider>();
+
+            services.AddScoped<ITransactionService, TransactionService>();
+            services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<IReportService, ReportService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

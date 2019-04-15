@@ -1,4 +1,4 @@
-﻿using Lombard.BLL.Providers;
+﻿using Lombard.BLL.Services;
 using Lombard.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -9,9 +9,9 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class ReportController : ControllerBase
     {
-        private readonly IReportProvider _reportProvider;
+        private readonly IReportService _reportProvider;
 
-        public ReportController(IReportProvider reportProvider)
+        public ReportController(IReportService reportProvider)
         {
             _reportProvider = reportProvider;
         }

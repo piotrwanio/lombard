@@ -1,10 +1,9 @@
 ﻿using Lombard.DAL.Models;
 using Lombard.DAL.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 namespace Lombard.DAL.Repositories.Implementations
 {
