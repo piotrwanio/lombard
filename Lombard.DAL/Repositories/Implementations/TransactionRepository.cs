@@ -58,7 +58,7 @@ namespace Lombard.DAL.Repositories.Implementations
 
         public Transaction GetTransaction(int id)
         {
-            throw new NotImplementedException();
+            return _context.Transactions.Where(t => t.TransactionId == id).FirstOrDefault();
         }
 
         public List<Transaction> GetTransactionByEmployee(Employee employee)
