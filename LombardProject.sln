@@ -21,6 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombard.DAL.Tests", "Lombar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombard.BLL", "Lombard.BLL2\Lombard.BLL.csproj", "{5B928A91-8CEF-4F36-A9D5-74176EC6CE3F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3E4FC2F-5948-49E4-9626-DF05B3DB5C67}"
+	ProjectSection(SolutionItems) = preProject
+		MyRuleset.ruleset = MyRuleset.ruleset
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +58,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5134A734-1259-4D5A-9AD6-23E93A443EBD} = {6A896732-EE22-41E6-B280-A99B39BCDECF}
+		{810DD723-8720-4BD0-A16D-A309D20F1FB1} = {6A896732-EE22-41E6-B280-A99B39BCDECF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E7C9F1D-C784-4DFC-B328-EEA2B096B1F7}
