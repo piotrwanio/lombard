@@ -33,5 +33,14 @@ namespace Lombard.BLL.Services
         {
             return _itemRepository.GetItems();
         }
+
+        public string UpdateItem(Item item)
+        {
+            if (_itemRepository.UpdateItem(item))
+            {
+                return "Przedmiot został zaktualizowany";
+            }
+            return "Błąd podczas aktualizacji przedmiotu";
+        }
     }
 }

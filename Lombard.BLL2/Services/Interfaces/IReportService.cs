@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-using Lombard.DAL.Models;
+﻿using Lombard.BLL.ViewModels;
 
 namespace Lombard.BLL.Services
 {
     public interface IReportService
     {
-        IList<Item> GetMissingItems();
-        IList<Item> GetStockStatus();
-        decimal GetTotalProfit();
-        decimal GetTotalRotation();
+        Report GenerateReport();
+        Report GenerateReport(string dateTime);
+        Report GenerateReport(string fromTime, string toTime);
     }
 }

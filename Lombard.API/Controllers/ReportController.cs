@@ -1,4 +1,5 @@
 ﻿using Lombard.BLL.Services;
+using Lombard.BLL.ViewModels;
 using Lombard.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -9,35 +10,29 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class ReportController : ControllerBase
     {
-        private readonly IReportService _reportProvider;
+        private readonly IReportService _reportService;
 
         public ReportController(IReportService reportProvider)
         {
-            _reportProvider = reportProvider;
+            _reportService = reportProvider;
         }
 
-        [HttpGet("rot/")]
-        public ActionResult<decimal> GetTotalRotation()
+        [HttpGet("")]
+        public ActionResult<Report> GetReportFromAll()
         {
-            return _reportProvider.GetTotalProfit();
+            return _reportService.GenerateReport();
         }
 
-        [HttpGet("profit/")]
-        public ActionResult<decimal> GetTotalProfit()
+        [HttpGet("{dateTime}")]
+        public ActionResult<Report> GetReportFromDate(string dateTime)
         {
-            return _reportProvider.GetTotalProfit();
+            return _reportService.GenerateReport();
         }
 
-        [HttpGet("stock/")]
-        public ActionResult<IList<Item>> GetStockStatus()
+        [HttpGet("{fromTime}/{toTime}")]
+        public ActionResult<Report> GetReportFromTimeScope()
         {
-            return new List<Item>();
-        }
-
-        [HttpGet("missing/")]
-        public ActionResult<IList<Item>> GetMissingItems()
-        {
-            return new List<Item>();
+            return _reportService.GenerateReport();
         }
     }
 }

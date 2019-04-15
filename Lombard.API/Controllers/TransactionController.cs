@@ -10,36 +10,29 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class TransactionController : ControllerBase
     {
-        private readonly ITransactionService _transactionProvider;
+        private readonly ITransactionService _transactionService;
 
         public TransactionController(ITransactionService transactionRepository)
         {
-            _transactionProvider = transactionRepository;
+            _transactionService = transactionRepository;
         }
 
         [HttpPost("")]
         public void AddTransaction(Transaction transaction)
         {
-            _transactionProvider.AddTransaction(transaction);
+            _transactionService.AddTransaction(transaction);
         }
 
         [HttpGet("{kind}")]
         public ActionResult<List<Transaction>> GetTransactionsByType(string kind)
         {
-            var type = TransactionType.None;
-            switch (kind)
+            if (kind == "sell")
             {
-                case "sell":
-                    type = TransactionType.Sell;
-                    break;
-                case "purchase":
-                    type = TransactionType.Purchase;
-                    break;
+                return _transactionService.GetTransactionsByType(TransactionType.Sell);
             }
-
-            if(type != TransactionType.None)
+            else if (kind == "purchase")
             {
-            return _transactionProvider.GetTransactionsByType(type);
+                return _transactionService.GetTransactionsByType(TransactionType.Purchase);
             }
 
             return BadRequest();
@@ -48,7 +41,7 @@ namespace Lombard.API.Controllers
         [HttpGet("")]
         public ActionResult<List<Transaction>> GetAllTransactions()
         {
-            return _transactionProvider.GetTransactions();
+            return _transactionService.GetTransactions();
         }
     }
 }

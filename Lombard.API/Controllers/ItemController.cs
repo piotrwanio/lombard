@@ -9,24 +9,24 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class ItemController : ControllerBase
     {
-        private readonly IItemService _itemProvider;
+        private readonly IItemService _itemService;
 
         public ItemController(IItemService itemProvider)
         {
-            _itemProvider = itemProvider;
+            _itemService = itemProvider;
         }
 
         [HttpGet("{id}")]
         public ActionResult<Item> GetItemById(int id)
         {
-            return _itemProvider.GetItemById(id);
+            return _itemService.GetItemById(id);
         }
 
         [HttpDelete("{id}")]
         public ActionResult<Item> DeleteItemById(int id)
         {
-            Item item = _itemProvider.GetItemById(id);
-            _itemProvider.DeleteItem(item);
+            Item item = _itemService.GetItemById(id);
+            _itemService.DeleteItem(item);
 
             return item;
         }
@@ -34,7 +34,13 @@ namespace Lombard.API.Controllers
         [HttpGet("")]
         public ActionResult<List<Item>> GetAllItems()
         {
-            return _itemProvider.GetItems();
+            return _itemService.GetItems();
+        }
+
+        [HttpPut("")]
+        public string UpdateItem(Item item)
+        {
+            return _itemService.UpdateItem(item);
         }
     }
 }
