@@ -26,6 +26,15 @@ namespace Lombard.DAL.Repositories.Implementations
 
         public bool DeleteItem(Item item)
         {
+            var itemVal = (from i in _context.Items
+                       where i.ItemId == item.ItemId
+                       select i).FirstOrDefault();
+
+            if(itemVal == null)
+            {
+                throw new Exception("Database doesn't contains this item");
+            }
+
             _context.Items.Remove(item);
             _context.SaveChanges();
             return true;

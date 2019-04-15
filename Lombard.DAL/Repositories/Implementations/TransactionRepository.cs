@@ -19,6 +19,11 @@ namespace Lombard.DAL.Repositories.Implementations
 
         public bool AddTransaction(Transaction transaction)
         {
+            if(transaction == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             var items = ((List<Item>)transaction.Items);
 
             transaction.Items = null;
@@ -28,21 +33,28 @@ namespace Lombard.DAL.Repositories.Implementations
             foreach (var item in items)
             {
                 int id = item.ItemId.GetValueOrDefault();
-                Item itemInput = null;
+                transaction.Customer = new Customer();
+                transaction.Employee = new Employee();
 
-                if(id == 0)
+                if (id == 0 || id < 0)
                 {
-                    itemInput = item;
+                    _context.TransactionsItems.Add(
+                        new TransactionItem
+                        {
+                            Item = item,
+                            Transaction = transaction
+                        });
                 }
-
-                _context.TransactionsItems.Add(
-                    new TransactionItem
-                    {
-                        ItemId = id,
-                        Item = itemInput,
-                        Transaction = transaction
-                    }
-                    );
+                else
+                {
+                    _context.TransactionsItems.Add(
+                        new TransactionItem
+                        {
+                            ItemId = id,
+                            Transaction = transaction
+                        }
+                        );
+                }
             }
             _context.SaveChanges();
 
@@ -73,7 +85,7 @@ namespace Lombard.DAL.Repositories.Implementations
             List<TransactionItem> transactionItems = (from t in _context.TransactionsItems.Include("Item")
                                                       select t)?.ToList();
 
-            foreach(var transaction in transactions)
+            foreach (var transaction in transactions)
             {
                 transaction.Items = new List<Item>();
 

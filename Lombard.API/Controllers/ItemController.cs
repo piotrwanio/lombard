@@ -42,5 +42,11 @@ namespace Lombard.API.Controllers
         {
             return new string[] { "product1", "product2" };
         }
+
+        [HttpPost("")]
+        public void AddItem(Item item)
+        {
+            _itemProvider.AddItem(item);
+        }
     }
 }

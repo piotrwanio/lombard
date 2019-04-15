@@ -25,6 +25,11 @@ namespace Lombard.BLL.Providers
            _itemRepository.DeleteItem(item);
         }
 
+        public void AddItem(Item item)
+        {
+            _itemRepository.AddItem(item);
+        }
+
         public List<Item> GetItems()
         {
             return _itemRepository.GetItems();

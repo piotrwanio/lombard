@@ -8,5 +8,6 @@ namespace Lombard.BLL.Providers
         void DeleteItem(Item item);
         Item GetItemById(int id);
         List<Item> GetItems();
+        void AddItem(Item item);
     }
 }
