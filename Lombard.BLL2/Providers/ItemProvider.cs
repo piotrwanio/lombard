@@ -6,7 +6,7 @@ using Lombard.DAL.Models;
 
 namespace Lombard.BLL.Providers
 {
-    public class ItemProvider
+    public class ItemProvider : IItemProvider
     {
         private readonly IItemRepository _itemRepository;
 

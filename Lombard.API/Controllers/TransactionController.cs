@@ -10,9 +10,9 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class TransactionController : ControllerBase
     {
-        private readonly TransactionProvider _transactionProvider;
+        private readonly ITransactionProvider _transactionProvider;
 
-        public TransactionController(TransactionProvider transactionRepository)
+        public TransactionController(ITransactionProvider transactionRepository)
         {
             _transactionProvider = transactionRepository;
         }

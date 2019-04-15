@@ -6,7 +6,7 @@ using Lombard.DAL.Repositories.Interfaces;
 
 namespace Lombard.BLL.Providers
 {
-    public class TransactionProvider
+    public class TransactionProvider : ITransactionProvider
     {
         private readonly ITransactionRepository _transactionRepository;
 

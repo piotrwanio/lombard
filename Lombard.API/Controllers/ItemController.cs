@@ -9,9 +9,9 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class ItemController : ControllerBase
     {
-        private readonly ItemProvider _itemProvider;
+        private readonly IItemProvider _itemProvider;
 
-        public ItemController(ItemProvider itemProvider)
+        public ItemController(IItemProvider itemProvider)
         {
             _itemProvider = itemProvider;
         }       
