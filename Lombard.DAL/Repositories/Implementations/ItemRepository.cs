@@ -35,8 +35,17 @@ namespace Lombard.DAL.Repositories.Implementations
                 throw new Exception("Database doesn't contains this item");
             }
 
-            _context.Items.Remove(item);
-            _context.SaveChanges();
+            try
+            {
+                _context.Items.Remove(item);
+                _context.SaveChanges();
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
             return true;
         }
 
