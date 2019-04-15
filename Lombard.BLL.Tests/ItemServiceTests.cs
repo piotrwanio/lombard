@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Lombard.BLL.Models;
 using Lombard.BLL.Services;
 using NUnit.Framework;
 
@@ -14,7 +15,7 @@ namespace Lombard.BLL.Tests
         [TestCase(8)]
         public void UpdateQuantity_EmployeeUpdatingQuantity_UpdatingQuantity(int quantity)
         {
-            var item = new Item(45,"Ryż",450M,4,"KG");
+            var item = new Item(45,"Ryż",450M,4,"KG", 6000);
             var itemService = new ItemService(item);
             itemService.UpdateQuantity(quantity);
             Assert.That(item.Quantity, Is.EqualTo(quantity));
@@ -24,7 +25,7 @@ namespace Lombard.BLL.Tests
         [Test]
         public void SetSellingPrice_EmployeeSetingItemSellingPrice_SellingPriceIsSet()
         {
-            var item = new Item(45, "Ryż", 450M, 4, "KG");
+            var item = new Item(45, "Ryż", 450M, 4, "KG", 6000);
             var itemService = new ItemService(item);
             var expected = 560M;
             itemService.SetSellingPrice(expected);
@@ -36,7 +37,7 @@ namespace Lombard.BLL.Tests
         [TestCase(823)]
         public void SetSellingPrice_EmployeesSetingItemSellingPrice_SellingPriceIsSet(decimal sellingPrice)
         {
-            var item = new Item(45, "Ryż", 450M, 4, "KG");
+            var item = new Item(45, "Ryż", 450M, 4, "KG", 6000);
             var itemService = new ItemService(item);
             itemService.SetSellingPrice(sellingPrice);
             Assert.That(item.SellingPrice, Is.EqualTo(sellingPrice));
@@ -45,7 +46,7 @@ namespace Lombard.BLL.Tests
         [Test]
         public void CalculateProfit_WhenCalled_ReturnsProfit()
         {
-            var item = new Item(45, "Ryż", 450M, 4, "KG");
+            var item = new Item(45, "Ryż", 450M, 4, "KG", 6000);
             var itemService = new ItemService(item);
             itemService.SetSellingPrice(455);
             var expected = 5M;
@@ -58,7 +59,7 @@ namespace Lombard.BLL.Tests
         [TestCase(900,450)]
         public void CalculateProfit_WhenCalled_ReturnsProfits(decimal sellingPrice, decimal profit)
         {
-            var item = new Item(45, "Ryż", 450M, 4, "KG");
+            var item = new Item(45, "Ryż", 450M, 4, "KG", 6000);
             var itemService = new ItemService(item);
             itemService.SetSellingPrice(sellingPrice);
             var actual = itemService.CalculateProfit();
