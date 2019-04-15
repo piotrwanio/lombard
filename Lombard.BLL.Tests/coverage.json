@@ -1,0 +1,2813 @@
+{
+  "Lombard.BLL.dll": {
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Services\\ItemService.cs": {
+      "Lombard.BLL.Services.ItemService": {
+        "System.Void Lombard.BLL.Services.ItemService::UpdateQuantity(System.Int32)": {
+          "Lines": {
+            "19": 3,
+            "21": 3,
+            "22": 3
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Services.ItemService::SetSellingPrice(System.Decimal)": {
+          "Lines": {
+            "25": 8,
+            "26": 8,
+            "27": 8
+          },
+          "Branches": []
+        },
+        "System.Decimal Lombard.BLL.Services.ItemService::CalculateProfit()": {
+          "Lines": {
+            "30": 4,
+            "31": 4,
+            "32": 4
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Services.ItemService::.ctor(Lombard.BLL.Models.Item)": {
+          "Lines": {
+            "13": 11,
+            "14": 11,
+            "15": 11,
+            "16": 11
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Services\\ReportService.cs": {
+      "Lombard.BLL.Services.ReportService": {
+        "System.Void Lombard.BLL.Services.ReportService::GetTotalRotation()": {
+          "Lines": {
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Services.ReportService::GetTotalProfit()": {
+          "Lines": {
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Services.ReportService::GetStockStatus()": {
+          "Lines": {
+            "28": 0,
+            "29": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Services.ReportService::GetMissingItems()": {
+          "Lines": {
+            "33": 0,
+            "34": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Services.ReportService::.ctor(Lombard.BLL.Models.Report)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Services\\TransactionService.cs": {
+      "Lombard.BLL.Services.TransactionService": {
+        "System.Decimal Lombard.BLL.Services.TransactionService::get_TransactionTotalPrice()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Lombard.BLL.Services.TransactionService::get_TransactionTotalProfit()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Lombard.BLL.Services.TransactionService::CalculateTotalProfit()": {
+          "Lines": {
+            "20": 1,
+            "21": 1,
+            "22": 1
+          },
+          "Branches": []
+        },
+        "System.Decimal Lombard.BLL.Services.TransactionService::CalculateTotalPrice()": {
+          "Lines": {
+            "25": 1,
+            "26": 1,
+            "28": 7,
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 57,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 28,
+              "Offset": 57,
+              "EndOffset": 59,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void Lombard.BLL.Services.TransactionService::.ctor(Lombard.BLL.Models.Transaction)": {
+          "Lines": {
+            "14": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Providers\\ItemProvider.cs": {
+      "Lombard.BLL.Providers.ItemProvider": {
+        "Lombard.DAL.Models.Item Lombard.BLL.Providers.ItemProvider::GetItemById(System.Int32)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Providers.ItemProvider::DeleteItem(Lombard.DAL.Models.Item)": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Lombard.DAL.Models.Item> Lombard.BLL.Providers.ItemProvider::GetItems()": {
+          "Lines": {
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Providers.ItemProvider::.ctor(Lombard.DAL.Repositories.Interfaces.IItemRepository)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Providers\\ReportProvider.cs": {
+      "Lombard.BLL.Providers.ReportProvider": {
+        "System.Decimal Lombard.BLL.Providers.ReportProvider::GetTotalRotation()": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Lombard.BLL.Providers.ReportProvider::GetTotalProfit()": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IList`1<Lombard.DAL.Models.Item> Lombard.BLL.Providers.ReportProvider::GetStockStatus()": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IList`1<Lombard.DAL.Models.Item> Lombard.BLL.Providers.ReportProvider::GetMissingItems()": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Providers\\TransactionProvider.cs": {
+      "Lombard.BLL.Providers.TransactionProvider": {
+        "System.Void Lombard.BLL.Providers.TransactionProvider::AddTransaction(Lombard.DAL.Models.Transaction)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Lombard.DAL.Models.Transaction> Lombard.BLL.Providers.TransactionProvider::GetTransactionsByType(Lombard.DAL.Models.TransactionType)": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Lombard.DAL.Models.Transaction> Lombard.BLL.Providers.TransactionProvider::GetTransactions()": {
+          "Lines": {
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Providers.TransactionProvider::.ctor(Lombard.DAL.Repositories.Interfaces.ITransactionRepository)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Models\\Employee.cs": {
+      "Lombard.BLL.Models.Employee": {
+        "System.Int32 Lombard.BLL.Models.Employee::get_EmpoyeeID()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Models\\Item.cs": {
+      "Lombard.BLL.Models.Item": {
+        "System.Int32 Lombard.BLL.Models.Item::get_ItemID()": {
+          "Lines": {
+            "19": 15
+          },
+          "Branches": []
+        },
+        "System.String Lombard.BLL.Models.Item::get_Name()": {
+          "Lines": {
+            "20": 15
+          },
+          "Branches": []
+        },
+        "System.Decimal Lombard.BLL.Models.Item::get_PurchasePrice()": {
+          "Lines": {
+            "21": 19
+          },
+          "Branches": []
+        },
+        "System.Double Lombard.BLL.Models.Item::get_Quantity()": {
+          "Lines": {
+            "23": 21
+          },
+          "Branches": []
+        },
+        "System.String Lombard.BLL.Models.Item::get_Unit()": {
+          "Lines": {
+            "24": 15
+          },
+          "Branches": []
+        },
+        "System.Decimal Lombard.BLL.Models.Item::get_SellingPrice()": {
+          "Lines": {
+            "25": 33
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Models.Item::.ctor(System.Int32,System.String,System.Decimal,System.Double,System.String,System.Decimal)": {
+          "Lines": {
+            "9": 15,
+            "10": 15,
+            "11": 15,
+            "12": 15,
+            "13": 15,
+            "14": 15,
+            "15": 15,
+            "16": 15,
+            "17": 15
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Models\\Person.cs": {
+      "Lombard.BLL.Models.Person": {
+        "System.String Lombard.BLL.Models.Person::get_FirstName()": {
+          "Lines": {
+            "9": 2
+          },
+          "Branches": []
+        },
+        "System.String Lombard.BLL.Models.Person::get_LastName()": {
+          "Lines": {
+            "10": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Models\\Report.cs": {
+      "Lombard.BLL.Models.Report": {
+        "System.Int32 Lombard.BLL.Models.Report::get_ReportId()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Double Lombard.BLL.Models.Report::get_TotalRotation()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Double Lombard.BLL.Models.Report::get_TotalProfit()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Lombard.BLL.Models.Report::get_Stock()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Models.Report::.ctor(System.Int32,System.Double,System.Double,System.Int32)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL2\\Models\\Transaction.cs": {
+      "Lombard.BLL.Models.Transaction": {
+        "System.Collections.Generic.IEnumerable`1<Lombard.BLL.Models.Item> Lombard.BLL.Models.Transaction::get_Items()": {
+          "Lines": {
+            "9": 1
+          },
+          "Branches": []
+        },
+        "System.Int32 Lombard.BLL.Models.Transaction::get_TransactionID()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "Lombard.BLL.Models.TransactionType Lombard.BLL.Models.Transaction::get_TransactionType()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "Lombard.BLL.Models.Employee Lombard.BLL.Models.Transaction::get_Employee()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "Lombard.BLL.Models.Customer Lombard.BLL.Models.Transaction::get_Customer()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Lombard.BLL.Models.Transaction::get_TransactionDate()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Models.Transaction::.ctor(System.Int32,Lombard.BLL.Models.TransactionType,Lombard.BLL.Models.Employee,Lombard.BLL.Models.Customer,System.DateTime,System.Collections.Generic.IEnumerable`1<Lombard.BLL.Models.Item>)": {
+          "Lines": {
+            "16": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2,
+            "20": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 2,
+            "25": 2
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "Lombard.BLL.Tests.dll": {
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL.Tests\\obj\\Debug\\netcoreapp2.1\\Lombard.BLL.Tests.Program.cs": {
+      "AutoGeneratedProgram": {
+        "System.Void AutoGeneratedProgram::Main(System.String[])": {
+          "Lines": {
+            "4": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL.Tests\\ItemServiceTests.cs": {
+      "Lombard.BLL.Tests.ItemServiceTests": {
+        "System.Void Lombard.BLL.Tests.ItemServiceTests::UpdateQuantity_EmployeeUpdatingQuantity_UpdatingQuantity(System.Int32)": {
+          "Lines": {
+            "17": 3,
+            "18": 3,
+            "19": 3,
+            "20": 3,
+            "21": 3,
+            "22": 3
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Tests.ItemServiceTests::SetSellingPrice_EmployeeSetingItemSellingPrice_SellingPriceIsSet()": {
+          "Lines": {
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Tests.ItemServiceTests::SetSellingPrice_EmployeesSetingItemSellingPrice_SellingPriceIsSet(System.Decimal)": {
+          "Lines": {
+            "39": 3,
+            "40": 3,
+            "41": 3,
+            "42": 3,
+            "43": 3,
+            "44": 3
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Tests.ItemServiceTests::CalculateProfit_WhenCalled_ReturnsProfit()": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Tests.ItemServiceTests::CalculateProfit_WhenCalled_ReturnsProfits(System.Decimal,System.Decimal)": {
+          "Lines": {
+            "61": 3,
+            "62": 3,
+            "63": 3,
+            "64": 3,
+            "65": 3,
+            "66": 3,
+            "67": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL.Tests\\ReportServiceTests.cs": {
+      "Lombard.BLL.Tests.ReportServiceTests": {
+        "System.Void Lombard.BLL.Tests.ReportServiceTests::TestEmptyStock()": {
+          "Lines": {
+            "14": 1,
+            "16": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.BLL.Tests\\TransactionServiceTests.cs": {
+      "Lombard.BLL.Tests.TransactionServiceTests": {
+        "System.Void Lombard.BLL.Tests.TransactionServiceTests::CalculateTotalProfit_ValidTransaction_Success()": {
+          "Lines": {
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "23": 1,
+            "24": 1,
+            "26": 1,
+            "27": 1
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.BLL.Tests.TransactionServiceTests::CalculateTotalPrice_ValidTransaction_Success()": {
+          "Lines": {
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "42": 1,
+            "43": 1
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "Lombard.DAL.dll": {
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\EFDbContext.cs": {
+      "Lombard.DAL.EFDbContext": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<Lombard.DAL.Models.Item> Lombard.DAL.EFDbContext::get_Items()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Lombard.DAL.Models.Transaction> Lombard.DAL.EFDbContext::get_Transactions()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Lombard.DAL.Models.TransactionItem> Lombard.DAL.EFDbContext::get_TransactionsItems()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Lombard.DAL.Models.Report> Lombard.DAL.EFDbContext::get_Reports()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Lombard.DAL.Models.Employee> Lombard.DAL.EFDbContext::get_Employees()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Lombard.DAL.Models.Customer> Lombard.DAL.EFDbContext::get_Customers()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.DAL.EFDbContext::OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)": {
+          "Lines": {
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.DAL.EFDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<Lombard.DAL.EFDbContext>)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.DAL.EFDbContext::.ctor()": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "26": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Repositories\\Implementations\\CustomerRepository.cs": {
+      "Lombard.DAL.Repositories.Implementations.CustomerRepository": {
+        "System.Boolean Lombard.DAL.Repositories.Implementations.CustomerRepository::AddCustomer(Lombard.DAL.Models.Customer)": {
+          "Lines": {
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Lombard.DAL.Repositories.Implementations.CustomerRepository::DeleteCustomer(System.Int32)": {
+          "Lines": {
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        },
+        "Lombard.DAL.Models.Customer Lombard.DAL.Repositories.Implementations.CustomerRepository::GetCustomer(System.Int32)": {
+          "Lines": {
+            "28": 0,
+            "29": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.DAL.Repositories.Implementations.CustomerRepository::.ctor(Lombard.DAL.EFDbContext)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Repositories\\Implementations\\EmployeeRepository.cs": {
+      "Lombard.DAL.Repositories.Implementations.EmployeeRepository": {
+        "System.Boolean Lombard.DAL.Repositories.Implementations.EmployeeRepository::AddEmployee(Lombard.DAL.Models.Employee)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 7,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean Lombard.DAL.Repositories.Implementations.EmployeeRepository::DeleteEmplyee(System.Int32)": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 10,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "Lombard.DAL.Models.Employee Lombard.DAL.Repositories.Implementations.EmployeeRepository::GetEmployee(System.Int32)": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 7,
+              "EndOffset": 18,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean Lombard.DAL.Repositories.Implementations.EmployeeRepository::UpdateEmployee(Lombard.DAL.Models.Employee)": {
+          "Lines": {
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0
+          },
+          "Branches": [
+            {
+              "Line": 34,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 7,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Repositories\\Implementations\\ItemRepository.cs": {
+      "Lombard.DAL.Repositories.Implementations.ItemRepository": {
+        "System.Boolean Lombard.DAL.Repositories.Implementations.ItemRepository::AddItem(Lombard.DAL.Models.Item)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Lombard.DAL.Repositories.Implementations.ItemRepository::DeleteItem(Lombard.DAL.Models.Item)": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": []
+        },
+        "Lombard.DAL.Models.Item Lombard.DAL.Repositories.Implementations.ItemRepository::GetItemById(System.Int32)": {
+          "Lines": {
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Lombard.DAL.Models.Item> Lombard.DAL.Repositories.Implementations.ItemRepository::GetItems()": {
+          "Lines": {
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0
+          },
+          "Branches": [
+            {
+              "Line": 44,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 44,
+              "Offset": 55,
+              "EndOffset": 61,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean Lombard.DAL.Repositories.Implementations.ItemRepository::UpdateItem(Lombard.DAL.Models.Item)": {
+          "Lines": {
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.DAL.Repositories.Implementations.ItemRepository::.ctor(Lombard.DAL.EFDbContext)": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Repositories\\Implementations\\TransactionRepository.cs": {
+      "Lombard.DAL.Repositories.Implementations.TransactionRepository": {
+        "System.Boolean Lombard.DAL.Repositories.Implementations.TransactionRepository::AddTransaction(Lombard.DAL.Models.Transaction)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "38": 0,
+            "39": 0
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 96,
+              "EndOffset": 41,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 96,
+              "EndOffset": 98,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean Lombard.DAL.Repositories.Implementations.TransactionRepository::DeleteTransaction(Lombard.DAL.Models.Transaction)": {
+          "Lines": {
+            "42": 0,
+            "43": 0,
+            "45": 0,
+            "46": 0
+          },
+          "Branches": []
+        },
+        "Lombard.DAL.Models.Transaction Lombard.DAL.Repositories.Implementations.TransactionRepository::GetTransaction(System.Int32)": {
+          "Lines": {
+            "49": 0,
+            "50": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Lombard.DAL.Models.Transaction> Lombard.DAL.Repositories.Implementations.TransactionRepository::GetTransactionByEmployee(Lombard.DAL.Models.Employee)": {
+          "Lines": {
+            "54": 0,
+            "55": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Lombard.DAL.Models.Transaction> Lombard.DAL.Repositories.Implementations.TransactionRepository::GetTransactions()": {
+          "Lines": {
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "69": 0,
+            "70": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "78": 0,
+            "79": 0
+          },
+          "Branches": [
+            {
+              "Line": 60,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 60,
+              "Offset": 55,
+              "EndOffset": 61,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 131,
+              "EndOffset": 133,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 131,
+              "EndOffset": 137,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 302,
+              "EndOffset": 156,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 72,
+              "Offset": 277,
+              "EndOffset": 229,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 72,
+              "Offset": 277,
+              "EndOffset": 279,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 302,
+              "EndOffset": 307,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Collections.Generic.List`1<Lombard.DAL.Models.Transaction> Lombard.DAL.Repositories.Implementations.TransactionRepository::GetTransactionsByClient(Lombard.DAL.Models.Customer)": {
+          "Lines": {
+            "82": 0,
+            "83": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0
+          },
+          "Branches": [
+            {
+              "Line": 85,
+              "Offset": 40,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 85,
+              "Offset": 40,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Collections.Generic.List`1<Lombard.DAL.Models.Transaction> Lombard.DAL.Repositories.Implementations.TransactionRepository::GetTransactionsByType(Lombard.DAL.Models.TransactionType)": {
+          "Lines": {
+            "91": 0,
+            "92": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0
+          },
+          "Branches": [
+            {
+              "Line": 94,
+              "Offset": 40,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 94,
+              "Offset": 40,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Collections.Generic.List`1<Lombard.DAL.Models.Transaction> Lombard.DAL.Repositories.Implementations.TransactionRepository::GetTransactionsInTimeRange(System.DateTime,System.DateTime)": {
+          "Lines": {
+            "100": 0,
+            "101": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0
+          },
+          "Branches": [
+            {
+              "Line": 103,
+              "Offset": 47,
+              "EndOffset": 49,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 103,
+              "Offset": 47,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean Lombard.DAL.Repositories.Implementations.TransactionRepository::UpdateTransaction(Lombard.DAL.Models.Transaction)": {
+          "Lines": {
+            "110": 0,
+            "111": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.DAL.Repositories.Implementations.TransactionRepository::.ctor(Lombard.DAL.EFDbContext)": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      },
+      "Lombard.DAL.Repositories.Implementations.TransactionRepository/<>c__DisplayClass9_0": {
+        "System.Boolean Lombard.DAL.Repositories.Implementations.TransactionRepository/<>c__DisplayClass9_0::<GetTransactionsInTimeRange>b__0(Lombard.DAL.Models.Transaction)": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 104,
+              "Offset": 17,
+              "EndOffset": 19,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 104,
+              "Offset": 17,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Models\\Customer.cs": {
+      "Lombard.DAL.Models.Customer": {
+        "System.Int32 Lombard.DAL.Models.Customer::get_CustomerID()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Models\\Employee.cs": {
+      "Lombard.DAL.Models.Employee": {
+        "System.Int32 Lombard.DAL.Models.Employee::get_EmployeeID()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Models\\Item.cs": {
+      "Lombard.DAL.Models.Item": {
+        "System.Nullable`1<System.Int32> Lombard.DAL.Models.Item::get_ItemId()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String Lombard.DAL.Models.Item::get_Name()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Lombard.DAL.Models.Item::get_PurchasePrice()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Double Lombard.DAL.Models.Item::get_Quantity()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.String Lombard.DAL.Models.Item::get_Unit()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Lombard.DAL.Models.Item::get_SellingPrice()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Models\\Person.cs": {
+      "Lombard.DAL.Models.Person": {
+        "System.String Lombard.DAL.Models.Person::get_FirstName()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String Lombard.DAL.Models.Person::get_LastName()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Models\\Report.cs": {
+      "Lombard.DAL.Models.Report": {
+        "System.Int32 Lombard.DAL.Models.Report::get_ReportId()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Double Lombard.DAL.Models.Report::get_TotalRotation()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Double Lombard.DAL.Models.Report::get_TotalProfit()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Lombard.DAL.Models.Report::get_Stock()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.DAL.Models.Report::.ctor(System.Int32,System.Double,System.Double,System.Int32)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Models\\Transaction.cs": {
+      "Lombard.DAL.Models.Transaction": {
+        "System.Nullable`1<System.Int32> Lombard.DAL.Models.Transaction::get_TransactionId()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<Lombard.DAL.Models.Item> Lombard.DAL.Models.Transaction::get_Items()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "Lombard.DAL.Models.TransactionType Lombard.DAL.Models.Transaction::get_TransactionType()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Lombard.DAL.Models.Transaction::get_EmployeeId()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Lombard.DAL.Models.Transaction::get_CustomerId()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Lombard.DAL.Models.Transaction::get_TransactionDate()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "Lombard.DAL.Models.Employee Lombard.DAL.Models.Transaction::get_Employee()": {
+          "Lines": {
+            "21": 0
+          },
+          "Branches": []
+        },
+        "Lombard.DAL.Models.Customer Lombard.DAL.Models.Transaction::get_Customer()": {
+          "Lines": {
+            "24": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Models\\TransactionItem.cs": {
+      "Lombard.DAL.Models.TransactionItem": {
+        "System.Nullable`1<System.Int32> Lombard.DAL.Models.TransactionItem::get_TransactionItemId()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Lombard.DAL.Models.TransactionItem::get_TransactionId()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Lombard.DAL.Models.TransactionItem::get_ItemId()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "Lombard.DAL.Models.Transaction Lombard.DAL.Models.TransactionItem::get_Transaction()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "Lombard.DAL.Models.Item Lombard.DAL.Models.TransactionItem::get_Item()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Migrations\\20190412214021_init.cs": {
+      "Lombard.DAL.Migrations.init": {
+        "System.Void Lombard.DAL.Migrations.init::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 10,
+              "Offset": 13,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 10,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 10,
+              "Offset": 45,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 24,
+              "Offset": 88,
+              "EndOffset": 90,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 24,
+              "Offset": 88,
+              "EndOffset": 113,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 24,
+              "Offset": 120,
+              "EndOffset": 122,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 24,
+              "Offset": 120,
+              "EndOffset": 145,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 38,
+              "Offset": 163,
+              "EndOffset": 165,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 38,
+              "Offset": 163,
+              "EndOffset": 188,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 38,
+              "Offset": 195,
+              "EndOffset": 197,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 38,
+              "Offset": 195,
+              "EndOffset": 220,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 238,
+              "EndOffset": 240,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 238,
+              "EndOffset": 263,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 270,
+              "EndOffset": 272,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 270,
+              "EndOffset": 295,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 81,
+              "Offset": 313,
+              "EndOffset": 315,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 81,
+              "Offset": 313,
+              "EndOffset": 338,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 81,
+              "Offset": 345,
+              "EndOffset": 347,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 81,
+              "Offset": 345,
+              "EndOffset": 370,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Lombard.DAL.Migrations.init::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "126": 0,
+            "127": 0,
+            "129": 0,
+            "130": 0,
+            "132": 0,
+            "133": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Migrations\\20190412214021_init.Designer.cs": {
+      "Lombard.DAL.Migrations.init": {
+        "System.Void Lombard.DAL.Migrations.init::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "16": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "131": 0
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 30,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 35,
+              "Offset": 73,
+              "EndOffset": 75,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 35,
+              "Offset": 73,
+              "EndOffset": 98,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 116,
+              "EndOffset": 118,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 116,
+              "EndOffset": 141,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 73,
+              "Offset": 159,
+              "EndOffset": 161,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 73,
+              "Offset": 159,
+              "EndOffset": 184,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 89,
+              "Offset": 202,
+              "EndOffset": 204,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 89,
+              "Offset": 202,
+              "EndOffset": 227,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 111,
+              "Offset": 245,
+              "EndOffset": 247,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 111,
+              "Offset": 245,
+              "EndOffset": 270,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 288,
+              "EndOffset": 290,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 288,
+              "EndOffset": 313,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Migrations\\20190412214737_newTable.cs": {
+      "Lombard.DAL.Migrations.newTable": {
+        "System.Void Lombard.DAL.Migrations.newTable::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0
+          },
+          "Branches": [
+            {
+              "Line": 9,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 9,
+              "Offset": 13,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 9,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 9,
+              "Offset": 45,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Lombard.DAL.Migrations.newTable::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Migrations\\20190412214737_newTable.Designer.cs": {
+      "Lombard.DAL.Migrations.newTable": {
+        "System.Void Lombard.DAL.Migrations.newTable::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "16": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "162": 0
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 30,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 35,
+              "Offset": 73,
+              "EndOffset": 75,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 35,
+              "Offset": 73,
+              "EndOffset": 98,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 116,
+              "EndOffset": 118,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 116,
+              "EndOffset": 141,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 73,
+              "Offset": 159,
+              "EndOffset": 161,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 73,
+              "Offset": 159,
+              "EndOffset": 184,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 89,
+              "Offset": 202,
+              "EndOffset": 204,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 89,
+              "Offset": 202,
+              "EndOffset": 227,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 111,
+              "Offset": 245,
+              "EndOffset": 247,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 111,
+              "Offset": 245,
+              "EndOffset": 270,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 129,
+              "Offset": 288,
+              "EndOffset": 290,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 129,
+              "Offset": 288,
+              "EndOffset": 313,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 136,
+              "Offset": 331,
+              "EndOffset": 333,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 136,
+              "Offset": 331,
+              "EndOffset": 356,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 149,
+              "Offset": 374,
+              "EndOffset": 376,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 149,
+              "Offset": 374,
+              "EndOffset": 399,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Migrations\\20190412222140_newTable2.cs": {
+      "Lombard.DAL.Migrations.newTable2": {
+        "System.Void Lombard.DAL.Migrations.newTable2::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "8": 0,
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Void Lombard.DAL.Migrations.newTable2::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "13": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Migrations\\20190412222140_newTable2.Designer.cs": {
+      "Lombard.DAL.Migrations.newTable2": {
+        "System.Void Lombard.DAL.Migrations.newTable2::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "16": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "162": 0
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 30,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 35,
+              "Offset": 73,
+              "EndOffset": 75,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 35,
+              "Offset": 73,
+              "EndOffset": 98,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 116,
+              "EndOffset": 118,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 116,
+              "EndOffset": 141,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 73,
+              "Offset": 159,
+              "EndOffset": 161,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 73,
+              "Offset": 159,
+              "EndOffset": 184,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 89,
+              "Offset": 202,
+              "EndOffset": 204,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 89,
+              "Offset": 202,
+              "EndOffset": 227,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 111,
+              "Offset": 245,
+              "EndOffset": 247,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 111,
+              "Offset": 245,
+              "EndOffset": 270,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 129,
+              "Offset": 288,
+              "EndOffset": 290,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 129,
+              "Offset": 288,
+              "EndOffset": 313,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 136,
+              "Offset": 331,
+              "EndOffset": 333,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 136,
+              "Offset": 331,
+              "EndOffset": 356,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 149,
+              "Offset": 374,
+              "EndOffset": 376,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 149,
+              "Offset": 374,
+              "EndOffset": 399,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "E:\\projects\\CSBootcamp\\lombard\\lombard\\Lombard.DAL\\Migrations\\EFDbContextModelSnapshot.cs": {
+      "Lombard.DAL.Migrations.EFDbContextModelSnapshot": {
+        "System.Void Lombard.DAL.Migrations.EFDbContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "14": 0,
+            "16": 0,
+            "17": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "160": 0
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 30,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 33,
+              "Offset": 73,
+              "EndOffset": 75,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 33,
+              "Offset": 73,
+              "EndOffset": 98,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 116,
+              "EndOffset": 118,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 116,
+              "EndOffset": 141,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 71,
+              "Offset": 159,
+              "EndOffset": 161,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 71,
+              "Offset": 159,
+              "EndOffset": 184,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 87,
+              "Offset": 202,
+              "EndOffset": 204,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 87,
+              "Offset": 202,
+              "EndOffset": 227,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 109,
+              "Offset": 245,
+              "EndOffset": 247,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 109,
+              "Offset": 245,
+              "EndOffset": 270,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 127,
+              "Offset": 288,
+              "EndOffset": 290,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 127,
+              "Offset": 288,
+              "EndOffset": 313,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 134,
+              "Offset": 331,
+              "EndOffset": 333,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 134,
+              "Offset": 331,
+              "EndOffset": 356,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 147,
+              "Offset": 374,
+              "EndOffset": 376,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 147,
+              "Offset": 374,
+              "EndOffset": 399,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

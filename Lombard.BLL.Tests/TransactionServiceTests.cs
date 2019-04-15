@@ -23,7 +23,7 @@ namespace Lombard.BLL.Tests
             var transactionService = new TransactionService(transaction);
             var expected = transactionService.CalculateTotalProfit();
 
-            Assert.AreEqual(12000, expected);
+            Assert.AreEqual(1000, expected);
         }
 
         [Test]

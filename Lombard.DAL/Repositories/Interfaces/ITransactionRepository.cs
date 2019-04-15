@@ -9,7 +9,7 @@ namespace Lombard.DAL.Repositories.Interfaces
     public interface ITransactionRepository
     {
         Transaction GetTransaction(int id);
-        bool DeleteTransaction(int id);
+        bool DeleteTransaction(Transaction transaction);
         bool AddTransaction(Transaction transaction);
         bool UpdateTransaction(Transaction transaction);
 

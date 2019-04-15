@@ -25,10 +25,13 @@ namespace Lombard.DAL.Repositories.Implementations
 
             foreach (var item in items)
             {
+                Item itemTest = _context.Items.Find(item?.ItemId);
+                if (itemTest == null) itemTest = item;
+
                 _context.TransactionsItems.Add(
                     new TransactionItem
                     {
-                        Item = item,
+                        Item = itemTest,
                         Transaction = transaction
                     }
                     );
@@ -38,9 +41,11 @@ namespace Lombard.DAL.Repositories.Implementations
             return true;
         }
 
-        public bool DeleteTransaction(int id)
+        public bool DeleteTransaction(Transaction transaction)
         {
-            throw new NotImplementedException();
+            _context.Remove(transaction);
+
+            return true;
         }
 
         public Transaction GetTransaction(int id)
@@ -96,7 +101,12 @@ namespace Lombard.DAL.Repositories.Implementations
 
         public List<Transaction> GetTransactionsInTimeRange(DateTime dateFrom, DateTime dateTo)
         {
-            throw new NotImplementedException();
+            List<Transaction> transactions = GetTransactions();
+
+            return (from t in transactions
+                    where (t.TransactionDate >= dateFrom
+                    && t.TransactionDate <= dateTo)
+                    select t)?.ToList();
         }
 
         public bool UpdateTransaction(Transaction transaction)
