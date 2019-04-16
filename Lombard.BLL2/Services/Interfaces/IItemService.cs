@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using Lombard.BLL.ViewModels;
-using Lombard.DAL.Models;
+﻿using Lombard.DAL.Models;
+using System.Collections.Generic;
 
 namespace Lombard.BLL.Services
 {
@@ -8,7 +7,7 @@ namespace Lombard.BLL.Services
     {
         void DeleteItem(Item item);
         Item GetItemById(int id);
-        IList<StockViewModel> GetItems();
+        IList<Item> GetItems();
         string UpdateItem(Item item);
     }
 }

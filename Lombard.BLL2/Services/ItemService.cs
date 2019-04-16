@@ -1,8 +1,6 @@
-﻿using Lombard.BLL.ViewModels;
-using Lombard.DAL.Models;
+﻿using Lombard.DAL.Models;
 using Lombard.DAL.Repositories.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Lombard.BLL.Services
 {
@@ -26,15 +24,9 @@ namespace Lombard.BLL.Services
         }
 
 
-        public IList<StockViewModel> GetItems()
+        public IList<Item> GetItems()
         {
-            return _itemRepository.GetItems().GroupBy(i => i.Name)
-                 .Select(x => new StockViewModel
-                 {
-                     Name = x.Key,
-                     Quantity = x.Select(y => y.Quantity).Sum()
-                 })
-                 .ToList();
+            return _itemRepository.GetItems();
         }
 
         public string UpdateItem(Item item)

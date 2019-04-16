@@ -19,19 +19,19 @@ namespace Lombard.API.Controllers
         }
 
         [HttpGet("")]
-        public ActionResult<Report> GetReportFromAll()
+        public ActionResult<ReportViewModel> GetReportFromAll()
         {
             return _reportService.GenerateReport();
         }
 
         [HttpGet("{dateTime}")]
-        public ActionResult<Report> GetReportFromDate(DateTime dateTime)
+        public ActionResult<ReportViewModel> GetReportFromDate(DateTime dateTime)
         {
             return _reportService.GenerateReport(dateTime);
         }
 
         [HttpGet("{fromTime}/{toTime}")]
-        public ActionResult<Report> GetReportFromTimeScope(DateTime fromTime, DateTime toTime)
+        public ActionResult<ReportViewModel> GetReportFromTimeScope(DateTime fromTime, DateTime toTime)
         {
             return _reportService.GenerateReport(fromTime, toTime);
         }

@@ -18,12 +18,12 @@ namespace Lombard.BLL.Services
             _itemRepository = itemRepository;
         }
 
-        public Report GenerateReport()
+        public ReportViewModel GenerateReport()
         {
             var transactions = _transactionRepository.GetTransactions();
             var items = _itemRepository.GetItems();
 
-            return new Report
+            return new ReportViewModel
             {
                 MissingItems = GetMissingItems(items),
                 Profit = GetTotalProfit(transactions),
@@ -34,14 +34,14 @@ namespace Lombard.BLL.Services
             };
         }
 
-        public Report GenerateReport(DateTime dateTime)
+        public ReportViewModel GenerateReport(DateTime dateTime)
         {
             var transactions = _transactionRepository.GetTransactions()
                 .Where(t => t.TransactionDate == dateTime)
                 .ToList();
             var items = _itemRepository.GetItems();
 
-            return new Report
+            return new ReportViewModel
             {
                 MissingItems = GetMissingItems(items),
                 Profit = GetTotalProfit(transactions),
@@ -52,14 +52,14 @@ namespace Lombard.BLL.Services
             };
         }
 
-        public Report GenerateReport(DateTime fromTime, DateTime toTime)
+        public ReportViewModel GenerateReport(DateTime fromTime, DateTime toTime)
         {
             var transactions = _transactionRepository.GetTransactions()
                 .Where(t => t.TransactionDate >= fromTime && t.TransactionDate <= toTime)
                 .ToList();
             var items = _itemRepository.GetItems();
 
-            return new Report
+            return new ReportViewModel
             {
                 MissingItems = GetMissingItems(items),
                 Profit = GetTotalProfit(transactions),
@@ -86,11 +86,24 @@ namespace Lombard.BLL.Services
             return STSum - pTSum;
         }
 
-        private IList<Item> GetStockStatus(IList<Item> items) => items;
+        private IList<StockViewModel> GetStockStatus(IList<Item> items) => items.GroupBy(i => i.Name)
+                 .Select(x => new StockViewModel
+                 {
+                     Name = x.Key,
+                     Quantity = x.Select(y => y.Quantity).Sum()
+                 })
+                 .ToList();
 
-        private IList<Item> GetMissingItems(IList<Item> items)
+        private IList<StockViewModel> GetMissingItems(IList<Item> items)
         {
-            return items.Where(i => i.Quantity <= 3).ToList();
+            return items.GroupBy(i => i.Name)
+                 .Select(x => new StockViewModel
+                 {
+                     Name = x.Key,
+                     Quantity = x.Select(y => y.Quantity).Sum()
+                 })                 
+                 .Where(i => i.Quantity <=3)
+                 .ToList();
         }
 
         private IList<Transaction> GetPurchaseTransactions(IList<Transaction> transactions)

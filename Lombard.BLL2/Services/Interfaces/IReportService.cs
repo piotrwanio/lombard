@@ -5,8 +5,8 @@ namespace Lombard.BLL.Services
 {
     public interface IReportService
     {
-        Report GenerateReport();
-        Report GenerateReport(DateTime dateTime);
-        Report GenerateReport(DateTime fromTime, DateTime toTime);
+        ReportViewModel GenerateReport();
+        ReportViewModel GenerateReport(DateTime dateTime);
+        ReportViewModel GenerateReport(DateTime fromTime, DateTime toTime);
     }
 }
