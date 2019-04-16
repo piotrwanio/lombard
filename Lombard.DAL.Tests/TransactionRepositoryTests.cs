@@ -44,15 +44,30 @@ namespace Lombard.DAL.Tests
                 Items = new List<Item> { item, item2 },              
             };
 
+            Transaction transaction2 = new Transaction
+            {
+                Items = new List<Item> { item2 }
+            };
+
             //act
-            var result = transactionRepository.AddTransaction(transaction);
+            transactionRepository.AddTransaction(transaction);
+            transactionRepository.AddTransaction(transaction2);
 
-            var get = transactionRepository.GetTransaction(transaction.TransactionId.Value);
-
-            var delete = transactionRepository.DeleteTransaction(transaction);
+            var all = transactionRepository.GetTransactions();
 
             //asserts
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(2, all.Count);
+        }
+
+        [Test]
+        public void AddTransaction_Null_NullArgException()
+        {
+            //arrange
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
+            TransactionRepository transactionRepository = new TransactionRepository(context);
+
+            //act and assert
+            Assert.Throws<ArgumentNullException>(() => { transactionRepository.AddTransaction(null); });
         }
 
         [Test]

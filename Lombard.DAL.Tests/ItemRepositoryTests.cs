@@ -75,6 +75,79 @@ namespace Lombard.DAL.Tests
             //asserts
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void Delete_CorrectItem_Success()
+        {
+            //arrange
+            EFDbContext context = new EFDbContext();
+            ItemRepository itemRepository = new ItemRepository(context);
+            Item item = new Item
+            {
+                Name = "ooo",
+                PurchasePrice = 888,
+                Quantity = 8
+            };
+
+            //act
+            itemRepository.AddItem(item);
+            var result = itemRepository.DeleteItem(item);
+
+            //asserts
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void Delete_InvalidItem_Success()
+        {
+            //arrange
+            EFDbContext context = new EFDbContext();
+            ItemRepository itemRepository = new ItemRepository(context);
+            Item item = new Item
+            {
+                Name = "ooo",
+                PurchasePrice = 888,
+                Quantity = 8
+            };
+            Item item2 = new Item
+            {
+                Name = "ooo",
+                PurchasePrice = 888,
+                Quantity = 8
+            };
+
+            //act
+            itemRepository.AddItem(item);
+
+            //asserts
+            Assert.Throws<Exception>(() => { itemRepository.DeleteItem(item2); });
+        }
+
+        [Test]
+        public void Update_CorrectItem_Success()
+        {
+            //arrange
+            EFDbContext context = new EFDbContext();
+            ItemRepository itemRepository = new ItemRepository(context);
+            Item item = new Item
+            {
+                Name = "ooo",
+                PurchasePrice = 888,
+                Quantity = 8
+            };
+
+            //act
+            itemRepository.AddItem(item);
+            var itemFromDb = itemRepository.GetItemById(item.ItemId.Value);
+
+            itemFromDb.Name = "testesttest";
+            var result = itemRepository.UpdateItem(itemFromDb);
+
+            var test = itemRepository.GetItemById(itemFromDb.ItemId.Value);
+
+            //asserts
+            Assert.AreEqual("testesttest", test.Name);
+        }
     }
 
 

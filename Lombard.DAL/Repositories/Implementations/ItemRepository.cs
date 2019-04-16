@@ -1,5 +1,6 @@
 ﻿using Lombard.DAL.Models;
 using Lombard.DAL.Repositories.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,8 +24,26 @@ namespace Lombard.DAL.Repositories.Implementations
 
         public bool DeleteItem(Item item)
         {
-            _context.Items.Remove(item);
-            _context.SaveChanges();
+            var itemVal = (from i in _context.Items
+                       where i.ItemId == item.ItemId
+                       select i).FirstOrDefault();
+
+            if(itemVal == null)
+            {
+                throw new Exception("Database doesn't contains this item");
+            }
+
+            try
+            {
+                _context.Items.Remove(item);
+                _context.SaveChanges();
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
             return true;
         }
 

@@ -18,6 +18,11 @@ namespace Lombard.DAL.Repositories.Implementations
 
         public bool AddTransaction(Transaction transaction)
         {
+            if(transaction == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             var items = ((List<Item>)transaction.Items);
 
             transaction.Items = null;
@@ -26,21 +31,26 @@ namespace Lombard.DAL.Repositories.Implementations
             foreach (var item in items)
             {
                 int id = item.ItemId.GetValueOrDefault();
-                Item itemInput = null;
 
-                if (id == 0)
+                if (id == 0 || id < 0)
                 {
-                    itemInput = item;
+                    _context.TransactionsItems.Add(
+                        new TransactionItem
+                        {
+                            Item = item,
+                            Transaction = transaction
+                        });
                 }
-
-                _context.TransactionsItems.Add(
-                    new TransactionItem
-                    {
-                        ItemId = id,
-                        Item = itemInput,
-                        Transaction = transaction
-                    }
-                    );
+                else
+                {
+                    _context.TransactionsItems.Add(
+                        new TransactionItem
+                        {
+                            ItemId = id,
+                            Transaction = transaction
+                        }
+                        );
+                }
             }
             _context.SaveChanges();
 
