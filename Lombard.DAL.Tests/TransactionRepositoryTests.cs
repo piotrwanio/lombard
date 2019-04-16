@@ -100,6 +100,7 @@ namespace Lombard.DAL.Tests
 
             //asserts
             //Assert.NotNull(result);
+            ///
         }
 
         private static DbContextOptions<EFDbContext> CreateNewContextOptions()
