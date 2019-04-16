@@ -50,10 +50,6 @@ namespace Lombard.DAL.Migrations
                     b.Property<int?>("TransactionId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CustomerId");
-
-                    b.Property<int>("EmployeeId");
-
                     b.Property<DateTime>("TransactionDate");
 
                     b.Property<int>("TransactionType");
@@ -63,7 +59,7 @@ namespace Lombard.DAL.Migrations
                     b.ToTable("Transactions");
 
                     b.HasData(
-                        new { TransactionId = 1, CustomerId = 0, EmployeeId = 0, TransactionDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), TransactionType = 0 }
+                        new { TransactionId = 1, TransactionDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), TransactionType = 0 }
                     );
                 });
 

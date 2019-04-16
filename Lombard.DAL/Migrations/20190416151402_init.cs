@@ -14,8 +14,6 @@ namespace Lombard.DAL.Migrations
                     TransactionId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     TransactionType = table.Column<int>(nullable: false),
-                    EmployeeId = table.Column<int>(nullable: false),
-                    CustomerId = table.Column<int>(nullable: false),
                     TransactionDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -85,8 +83,8 @@ namespace Lombard.DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Transactions",
-                columns: new[] { "TransactionId", "CustomerId", "EmployeeId", "TransactionDate", "TransactionType" },
-                values: new object[] { 1, 0, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 });
+                columns: new[] { "TransactionId", "TransactionDate", "TransactionType" },
+                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 });
 
             migrationBuilder.InsertData(
                 table: "TransactionsItems",

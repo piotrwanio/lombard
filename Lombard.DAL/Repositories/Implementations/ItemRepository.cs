@@ -26,10 +26,10 @@ namespace Lombard.DAL.Repositories.Implementations
         public bool DeleteItem(Item item)
         {
             var itemVal = (from i in _context.Items
-                       where i.ItemId == item.ItemId
-                       select i).FirstOrDefault();
+                           where i.ItemId == item.ItemId
+                           select i).FirstOrDefault();
 
-            if(itemVal == null)
+            if (itemVal == null)
             {
                 throw new Exception("Database doesn't contains this item");
             }
@@ -51,15 +51,33 @@ namespace Lombard.DAL.Repositories.Implementations
 
         public Item GetItemById(int id)
         {
-            return (from i in _context.Items
-                         where i.ItemId == id
-                         select i).FirstOrDefault();
+            try
+            {
+                var item = (from i in _context.Items
+                            where i.ItemId == id
+                            select i).FirstOrDefault();
+                return item;
+            }
+            catch(Exception e)
+            {
+                Debug.WriteLine(e.Message);
+                return null;
+            }
         }
 
-        public List<Item> GetItems()
+        public IList<Item> GetItems()
         {
-            return (from i in _context.Items
-                         select i)?.ToList();
+            try
+            {
+                IList<Item> items = (from i in _context.Items
+                                     select i)?.ToList();
+                return items;
+            }
+            catch(Exception e)
+            {
+                Debug.WriteLine(e.Message);
+                return null;
+            }
         }
 
         public bool UpdateItem(Item item)

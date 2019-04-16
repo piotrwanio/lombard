@@ -21,7 +21,10 @@ namespace Lombard.API.Controllers
         [HttpGet("{id}")]
         public ActionResult<Item> GetItemById(int id)
         {
-            return _itemService.GetItemById(id);
+            var item = _itemService.GetItemById(id);
+            if (item == null) return NoContent();
+
+            return item;
         }
 
         [HttpDelete("{id}")]
@@ -36,7 +39,10 @@ namespace Lombard.API.Controllers
         [HttpGet("")]
         public ActionResult<List<Item>> GetAllItems()
         {
-            return _itemService.GetItems().ToList();
+            var items = _itemService.GetItems()?.ToList();
+            if (items == null) return NoContent();
+
+            return items;
         }
 
         [HttpPut("")]
