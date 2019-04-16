@@ -1,6 +1,5 @@
 ﻿using Lombard.DAL.Models;
 using Lombard.DAL.Repositories.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace Lombard.BLL.Services
@@ -23,12 +22,7 @@ namespace Lombard.BLL.Services
         {
            _itemRepository.DeleteItem(item);
         }
-
-
-        public void UpdateQuantity(int quantity)
-        {
-            throw new NotImplementedException();
-        }
+     
 
         public IList<Item> GetItems()
         {

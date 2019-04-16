@@ -23,7 +23,7 @@ namespace Lombard.DAL.Repositories.Implementations
                 throw new ArgumentNullException();
             }
 
-            var items = ((List<Item>)transaction.Items);
+            var items = transaction.Items.ToList();
 
             transaction.Items = null;
             _context.Transactions.Add(transaction);

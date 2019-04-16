@@ -12,9 +12,9 @@ namespace Lombard.API.Controllers
     {
         private readonly IItemService _itemService;
 
-        public ItemController(IItemService itemProvider)
+        public ItemController(IItemService itemService)
         {
-            _itemService = itemProvider;
+            _itemService = itemService;
         }
 
         [HttpGet("{id}")]

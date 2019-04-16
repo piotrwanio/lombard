@@ -13,9 +13,9 @@ namespace Lombard.API.Controllers
     {
         private readonly IReportService _reportService;
 
-        public ReportController(IReportService reportProvider)
+        public ReportController(IReportService reportService)
         {
-            _reportService = reportProvider;
+            _reportService = reportService;
         }
 
         [HttpGet("")]

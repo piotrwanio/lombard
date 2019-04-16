@@ -12,9 +12,9 @@ namespace Lombard.API.Controllers
     {
         private readonly ITransactionService _transactionService;
 
-        public TransactionController(ITransactionService transactionRepository)
+        public TransactionController(ITransactionService transactionService)
         {
-            _transactionService = transactionRepository;
+            _transactionService = transactionService;
         }
 
         [HttpPost("")]
