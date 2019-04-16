@@ -73,6 +73,31 @@ namespace Lombard.DAL.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "ItemId", "Name", "PurchasePrice", "Quantity", "SellingPrice", "TransactionId", "Unit" },
+                values: new object[] { 1, "Kubek", 100m, 2.0, 0m, null, null });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "ItemId", "Name", "PurchasePrice", "Quantity", "SellingPrice", "TransactionId", "Unit" },
+                values: new object[] { 2, "Kubek2", 100m, 2.0, 0m, null, null });
+
+            migrationBuilder.InsertData(
+                table: "Transactions",
+                columns: new[] { "TransactionId", "CustomerId", "EmployeeId", "TransactionDate", "TransactionType" },
+                values: new object[] { 1, 0, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 });
+
+            migrationBuilder.InsertData(
+                table: "TransactionsItems",
+                columns: new[] { "TransactionItemId", "ItemId", "TransactionId" },
+                values: new object[] { 1, 2, 1 });
+
+            migrationBuilder.InsertData(
+                table: "TransactionsItems",
+                columns: new[] { "TransactionItemId", "ItemId", "TransactionId" },
+                values: new object[] { 2, 1, 1 });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Items_TransactionId",
                 table: "Items",
