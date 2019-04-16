@@ -78,8 +78,6 @@ namespace Lombard.DAL.Tests
             TransactionRepository transactionRepository = new TransactionRepository(context);
 
             //act
-            var result = transactionRepository.GetTransactions();
-
 
             var transactions = new List<Transaction>
             {
@@ -98,8 +96,10 @@ namespace Lombard.DAL.Tests
             };
 
             transactions.ForEach(t => transactionRepository.AddTransaction(t));
+            var result = transactionRepository.GetTransactions();
+
             //asserts
-            Assert.NotNull(result);
+            //Assert.NotNull(result);
         }
 
         private static DbContextOptions<EFDbContext> CreateNewContextOptions()
