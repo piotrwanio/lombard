@@ -1,8 +1,7 @@
-﻿using Lombard.DAL.Models;
-using Lombard.DAL.Repositories.Interfaces;
+﻿using Lombard.BLL.Services;
+using Lombard.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using Lombard.BLL.Services;
 
 namespace Lombard.API.Controllers
 {

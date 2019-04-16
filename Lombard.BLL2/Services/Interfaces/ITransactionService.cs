@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Lombard.DAL.Models;
+﻿using Lombard.DAL.Models;
+using System.Collections.Generic;
 
 namespace Lombard.BLL.Services
 {
