@@ -29,7 +29,7 @@ namespace Lombard.BLL.Services
             throw new NotImplementedException();
         }
 
-        public List<Item> GetItems()
+        public IList<Item> GetItems()
         {
             return _itemRepository.GetItems();
         }

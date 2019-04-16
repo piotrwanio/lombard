@@ -7,7 +7,7 @@ namespace Lombard.BLL.Services
     {
         void DeleteItem(Item item);
         Item GetItemById(int id);
-        List<Item> GetItems();
+        IList<Item> GetItems();
         string UpdateItem(Item item);
     }
 }

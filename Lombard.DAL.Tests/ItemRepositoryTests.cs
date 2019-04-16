@@ -67,6 +67,8 @@ namespace Lombard.DAL.Tests
             };
 
             items.ForEach(i => itemRepository.AddItem(i));
+
+
             //act
             var result = itemRepository.AddItem(item);
 
