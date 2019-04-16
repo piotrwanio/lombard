@@ -1,4 +1,5 @@
 ﻿using Lombard.BLL.Services;
+using Lombard.BLL.ViewModels;
 using Lombard.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace Lombard.API.Controllers
         }
 
         [HttpGet("")]
-        public ActionResult<List<Item>> GetAllItems()
+        public ActionResult<List<StockViewModel>> GetAllItems()
         {
             return _itemService.GetItems().ToList();
         }
