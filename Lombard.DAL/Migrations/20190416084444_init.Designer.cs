@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lombard.DAL.Migrations
 {
     [DbContext(typeof(EFDbContext))]
-    [Migration("20190415134600_init")]
+    [Migration("20190416084444_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,6 +40,11 @@ namespace Lombard.DAL.Migrations
                     b.HasIndex("TransactionId");
 
                     b.ToTable("Items");
+
+                    b.HasData(
+                        new { ItemId = 1, Name = "Kubek", PurchasePrice = 100m, Quantity = 2.0, SellingPrice = 0m },
+                        new { ItemId = 2, Name = "Kubek2", PurchasePrice = 100m, Quantity = 2.0, SellingPrice = 0m }
+                    );
                 });
 
             modelBuilder.Entity("Lombard.DAL.Models.Transaction", b =>
@@ -58,6 +63,10 @@ namespace Lombard.DAL.Migrations
                     b.HasKey("TransactionId");
 
                     b.ToTable("Transactions");
+
+                    b.HasData(
+                        new { TransactionId = 1, CustomerId = 0, EmployeeId = 0, TransactionDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), TransactionType = 0 }
+                    );
                 });
 
             modelBuilder.Entity("Lombard.DAL.Models.TransactionItem", b =>
@@ -76,6 +85,11 @@ namespace Lombard.DAL.Migrations
                     b.HasIndex("TransactionId");
 
                     b.ToTable("TransactionsItems");
+
+                    b.HasData(
+                        new { TransactionItemId = 1, ItemId = 2, TransactionId = 1 },
+                        new { TransactionItemId = 2, ItemId = 1, TransactionId = 1 }
+                    );
                 });
 
             modelBuilder.Entity("Lombard.DAL.Models.Item", b =>
