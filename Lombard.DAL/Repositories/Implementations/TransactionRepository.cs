@@ -31,8 +31,6 @@ namespace Lombard.DAL.Repositories.Implementations
             foreach (var item in items)
             {
                 int id = item.ItemId.GetValueOrDefault();
-                transaction.Customer = new Customer();
-                transaction.Employee = new Employee();
 
                 if (id == 0 || id < 0)
                 {

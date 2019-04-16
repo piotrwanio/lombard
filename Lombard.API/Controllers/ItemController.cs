@@ -43,11 +43,5 @@ namespace Lombard.API.Controllers
         {
             return _itemService.UpdateItem(item);
         }
-
-        [HttpPost("")]
-        public void AddItem(Item item)
-        {
-            _itemProvider.AddItem(item);
-        }
     }
 }
