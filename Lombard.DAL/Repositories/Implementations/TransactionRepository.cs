@@ -1,16 +1,15 @@
 ﻿using Lombard.DAL.Models;
 using Lombard.DAL.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 namespace Lombard.DAL.Repositories.Implementations
 {
     public class TransactionRepository : ITransactionRepository
     {
-        EFDbContext _context;
+        private readonly EFDbContext _context;
 
         public TransactionRepository(EFDbContext context)
         {
@@ -28,7 +27,6 @@ namespace Lombard.DAL.Repositories.Implementations
 
             transaction.Items = null;
             _context.Transactions.Add(transaction);
-
 
             foreach (var item in items)
             {
@@ -73,11 +71,6 @@ namespace Lombard.DAL.Repositories.Implementations
             return _context.Transactions.Where(t => t.TransactionId == id).FirstOrDefault();
         }
 
-        public List<Transaction> GetTransactionByEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Transaction> GetTransactions()
         {
             List<Transaction> transactions = (from t in _context.Transactions
@@ -99,15 +92,6 @@ namespace Lombard.DAL.Repositories.Implementations
             }
 
             return transactions;
-        }
-
-        public List<Transaction> GetTransactionsByClient(Customer customer)
-        {
-            List<Transaction> transactions = GetTransactions();
-
-            return (from t in transactions
-                    where t.Customer == customer
-                    select t)?.ToList();
         }
 
         public List<Transaction> GetTransactionsByType(TransactionType type)

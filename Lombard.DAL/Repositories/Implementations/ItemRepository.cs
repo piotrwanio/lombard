@@ -1,16 +1,13 @@
 ﻿using Lombard.DAL.Models;
 using Lombard.DAL.Repositories.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace Lombard.DAL.Repositories.Implementations
 {
     public class ItemRepository : IItemRepository
     {
-        EFDbContext _context;
+        private readonly EFDbContext _context;
 
         public ItemRepository(EFDbContext context)
         {
@@ -51,10 +48,9 @@ namespace Lombard.DAL.Repositories.Implementations
 
         public Item GetItemById(int id)
         {
-            Item item = (from i in _context.Items
+            return (from i in _context.Items
                          where i.ItemId == id
                          select i).FirstOrDefault();
-            return item;
         }
 
         public List<Item> GetItems()

@@ -1,9 +1,5 @@
 ﻿using Lombard.DAL.Models;
-using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Lombard.DAL
 {
@@ -19,12 +15,11 @@ namespace Lombard.DAL
 
         public EFDbContext()
         {
-
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=e:/Database.db");
+            optionsBuilder.UseSqlite("Data Source=d:/Database.db");
         }
     }
 }

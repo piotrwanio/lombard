@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 
 namespace Lombard.DAL.Tests
 {
@@ -22,11 +23,51 @@ namespace Lombard.DAL.Tests
             //arrange
             EFDbContext context = new EFDbContext();
             ItemRepository itemRepository = new ItemRepository(context);
-            Item item = new Item {
+            Item item = new Item
+            {
                 Name = "ooo",
                 PurchasePrice = 888,
                 Quantity = 8
             };
+
+            var items = new List<Item>
+            {
+                new Item {
+                        Name = "ooo",
+                        PurchasePrice = 888,
+                        Quantity = 8
+                        },
+                new Item {
+                        Name = "asd",
+                        PurchasePrice = 666,
+                        Quantity = 6
+                        },
+                new Item {
+                        Name = "qwe",
+                        PurchasePrice = 555,
+                        Quantity = 5
+                        },
+                new Item
+                {
+                        Name = "zxc",
+                        PurchasePrice = 999,
+                        Quantity = 9
+                },
+                new Item
+                {
+                        Name = "fgh",
+                        PurchasePrice = 111,
+                        Quantity = 1
+                },
+                new Item {
+                        Name = "rty",
+                        PurchasePrice = 777,
+                        Quantity = 7
+                }
+            };
+
+            items.ForEach(i => itemRepository.AddItem(i));
+
 
             //act
             var result = itemRepository.AddItem(item);

@@ -1,7 +1,8 @@
-﻿using Lombard.BLL.Providers;
+﻿using Lombard.BLL.Services;
 using Lombard.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lombard.API.Controllers
 {
@@ -9,24 +10,24 @@ namespace Lombard.API.Controllers
     [ApiController]
     public class ItemController : ControllerBase
     {
-        private readonly IItemProvider _itemProvider;
+        private readonly IItemService _itemService;
 
-        public ItemController(IItemProvider itemProvider)
+        public ItemController(IItemService itemProvider)
         {
-            _itemProvider = itemProvider;
-        }       
+            _itemService = itemProvider;
+        }
 
         [HttpGet("{id}")]
         public ActionResult<Item> GetItemById(int id)
         {
-            return _itemProvider.GetItemById(id);
+            return _itemService.GetItemById(id);
         }
 
         [HttpDelete("{id}")]
         public ActionResult<Item> DeleteItemById(int id)
         {
-            Item item = _itemProvider.GetItemById(id);
-            _itemProvider.DeleteItem(item);
+            Item item = _itemService.GetItemById(id);
+            _itemService.DeleteItem(item);
 
             return item;
         }
@@ -34,13 +35,13 @@ namespace Lombard.API.Controllers
         [HttpGet("")]
         public ActionResult<List<Item>> GetAllItems()
         {
-            return _itemProvider.GetItems();
+            return _itemService.GetItems().ToList();
         }
 
-        [HttpGet("test")]
-        public ActionResult<IEnumerable<string>> Get()
+        [HttpPut("")]
+        public string UpdateItem(Item item)
         {
-            return new string[] { "product1", "product2" };
+            return _itemService.UpdateItem(item);
         }
 
         [HttpPost("")]

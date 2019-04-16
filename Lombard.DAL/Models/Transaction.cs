@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Lombard.DAL.Models
 {
@@ -16,12 +15,5 @@ namespace Lombard.DAL.Models
         public int EmployeeId { get; set; }
         public int CustomerId { get; set; }
         public DateTime TransactionDate { get; set; }
-
-        [ForeignKey(nameof(EmployeeId))]
-        public virtual Employee Employee { get; set; }
-        
-        [ForeignKey(nameof(CustomerId))]
-        public virtual Customer Customer { get; set; }
-
     }
 }

@@ -1,36 +1,31 @@
-﻿using Lombard.BLL.Models;
-using System;
+﻿using Lombard.DAL.Models;
+using Lombard.DAL.Repositories.Interfaces;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Lombard.BLL.Services
 {
-    public class TransactionService
+    public class TransactionService : ITransactionService
     {
-        private readonly Transaction _transaction;
-        public decimal TransactionTotalPrice => CalculateTotalPrice();
-        public decimal TransactionTotalProfit => CalculateTotalProfit();
+        private readonly ITransactionRepository _transactionRepository;
 
-        public TransactionService(Transaction transaction)
+        public TransactionService(ITransactionRepository transactionRepository)
         {
-            _transaction = transaction;
+            _transactionRepository = transactionRepository;
         }
 
-        public decimal CalculateTotalProfit()
+        public void AddTransaction(Transaction transaction)
         {
-            return 1000;
+            _transactionRepository.AddTransaction(transaction);
         }
 
-        public decimal CalculateTotalPrice()
+        public List<Transaction> GetTransactionsByType(TransactionType type)
         {
-            decimal totalPrice = 0;
+            return _transactionRepository.GetTransactionsByType(type);
+        }
 
-            foreach (var item in _transaction.Items)
-            {
-                totalPrice += item.SellingPrice;
-            }
-
-            return totalPrice;
+        public List<Transaction> GetTransactions()
+        {
+            return _transactionRepository.GetTransactions();
         }
     }
 }

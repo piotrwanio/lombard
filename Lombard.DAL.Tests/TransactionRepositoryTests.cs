@@ -41,9 +41,7 @@ namespace Lombard.DAL.Tests
             
             Transaction transaction = new Transaction
             {
-                Items = new List<Item> { item, item2 },
-                Customer = new Customer { FirstName = "ss"},
-                Employee = new Employee { FirstName = "ss"}
+                Items = new List<Item> { item, item2 },              
             };
 
             Transaction transaction2 = new Transaction
@@ -84,6 +82,24 @@ namespace Lombard.DAL.Tests
             //act
             var result = transactionRepository.GetTransactions();
 
+
+            var transactions = new List<Transaction>
+            {
+                new Transaction {
+                       TransactionId = 1,
+                       TransactionDate = new DateTime(2019,11,12)
+                        },
+                new Transaction {
+                        TransactionId = 2,
+                       TransactionDate = new DateTime(2018,11,12)
+                        },
+                new Transaction {
+                        TransactionId = 3,
+                       TransactionDate = new DateTime(2017,11,12)
+                        },
+            };
+
+            transactions.ForEach(t => transactionRepository.AddTransaction(t));
             //asserts
             Assert.NotNull(result);
         }

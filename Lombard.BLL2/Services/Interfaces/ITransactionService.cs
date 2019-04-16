@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Lombard.DAL.Models;
 
-namespace Lombard.BLL.Providers
+namespace Lombard.BLL.Services
 {
-    public interface ITransactionProvider
+    public interface ITransactionService
     {
         void AddTransaction(Transaction transaction);
         List<Transaction> GetTransactions();

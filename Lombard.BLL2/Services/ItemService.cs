@@ -1,31 +1,47 @@
-﻿using Lombard.BLL.Models;
+﻿using Lombard.DAL.Models;
+using Lombard.DAL.Repositories.Interfaces;
+using System;
+using System.Collections.Generic;
 
 namespace Lombard.BLL.Services
 {
-    public class ItemService
+    public class ItemService : IItemService
     {
-        private readonly Item _item;
+        private readonly IItemRepository _itemRepository;
 
-        public ItemService(Item item)
+        public ItemService(IItemRepository itemRepository)
         {
-            _item = item;
+            _itemRepository = itemRepository;
+        }
+
+        public Item GetItemById(int id)
+        {
+            return _itemRepository.GetItemById(id);
+        }
+
+        public void DeleteItem(Item item)
+        {
+           _itemRepository.DeleteItem(item);
         }
 
 
         public void UpdateQuantity(int quantity)
         {
-            //add validation
-            _item.Quantity = quantity;
+            throw new NotImplementedException();
         }
 
-        public void SetSellingPrice(decimal sellingPrice)
+        public IList<Item> GetItems()
         {
-            _item.SellingPrice = sellingPrice;
+            return _itemRepository.GetItems();
         }
 
-        public decimal CalculateProfit()
+        public string UpdateItem(Item item)
         {
-            return _item.SellingPrice - _item.PurchasePrice;
+            if (_itemRepository.UpdateItem(item))
+            {
+                return "Przedmiot został zaktualizowany";
+            }
+            return "Błąd podczas aktualizacji przedmiotu";
         }
     }
 }

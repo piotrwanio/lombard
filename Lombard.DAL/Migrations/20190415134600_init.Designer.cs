@@ -9,42 +9,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lombard.DAL.Migrations
 {
     [DbContext(typeof(EFDbContext))]
-    [Migration("20190412222140_newTable2")]
-    partial class newTable2
+    [Migration("20190415134600_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.0-rtm-30799");
-
-            modelBuilder.Entity("Lombard.DAL.Models.Customer", b =>
-                {
-                    b.Property<int>("CustomerID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
-
-                    b.HasKey("CustomerID");
-
-                    b.ToTable("Customers");
-                });
-
-            modelBuilder.Entity("Lombard.DAL.Models.Employee", b =>
-                {
-                    b.Property<int>("EmployeeID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
-
-                    b.HasKey("EmployeeID");
-
-                    b.ToTable("Employees");
-                });
+                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085");
 
             modelBuilder.Entity("Lombard.DAL.Models.Item", b =>
                 {
@@ -70,22 +42,6 @@ namespace Lombard.DAL.Migrations
                     b.ToTable("Items");
                 });
 
-            modelBuilder.Entity("Lombard.DAL.Models.Report", b =>
-                {
-                    b.Property<int>("ReportId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("Stock");
-
-                    b.Property<double>("TotalProfit");
-
-                    b.Property<double>("TotalRotation");
-
-                    b.HasKey("ReportId");
-
-                    b.ToTable("Reports");
-                });
-
             modelBuilder.Entity("Lombard.DAL.Models.Transaction", b =>
                 {
                     b.Property<int?>("TransactionId")
@@ -100,10 +56,6 @@ namespace Lombard.DAL.Migrations
                     b.Property<int>("TransactionType");
 
                     b.HasKey("TransactionId");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("EmployeeId");
 
                     b.ToTable("Transactions");
                 });
@@ -131,19 +83,6 @@ namespace Lombard.DAL.Migrations
                     b.HasOne("Lombard.DAL.Models.Transaction")
                         .WithMany("Items")
                         .HasForeignKey("TransactionId");
-                });
-
-            modelBuilder.Entity("Lombard.DAL.Models.Transaction", b =>
-                {
-                    b.HasOne("Lombard.DAL.Models.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Lombard.DAL.Models.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Lombard.DAL.Models.TransactionItem", b =>
