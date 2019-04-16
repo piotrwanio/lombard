@@ -14,8 +14,6 @@ namespace Lombard.DAL.Migrations
                     TransactionId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     TransactionType = table.Column<int>(nullable: false),
-                    EmployeeId = table.Column<int>(nullable: false),
-                    CustomerId = table.Column<int>(nullable: false),
                     TransactionDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -76,27 +74,102 @@ namespace Lombard.DAL.Migrations
             migrationBuilder.InsertData(
                 table: "Items",
                 columns: new[] { "ItemId", "Name", "PurchasePrice", "Quantity", "SellingPrice", "TransactionId", "Unit" },
-                values: new object[] { 1, "Kubek", 100m, 2.0, 0m, null, null });
+                values: new object[] { 1, "Kubek", 15m, 2.0, 0m, null, null });
 
             migrationBuilder.InsertData(
                 table: "Items",
                 columns: new[] { "ItemId", "Name", "PurchasePrice", "Quantity", "SellingPrice", "TransactionId", "Unit" },
-                values: new object[] { 2, "Kubek2", 100m, 2.0, 0m, null, null });
+                values: new object[] { 2, "Długopis", 5m, 15.0, 0m, null, null });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "ItemId", "Name", "PurchasePrice", "Quantity", "SellingPrice", "TransactionId", "Unit" },
+                values: new object[] { 3, "Kawa", 40m, 5.0, 0m, null, null });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "ItemId", "Name", "PurchasePrice", "Quantity", "SellingPrice", "TransactionId", "Unit" },
+                values: new object[] { 4, "Ciastka", 2m, 85.0, 0m, null, null });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "ItemId", "Name", "PurchasePrice", "Quantity", "SellingPrice", "TransactionId", "Unit" },
+                values: new object[] { 5, "Ładowarka", 30m, 2.0, 0m, null, null });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "ItemId", "Name", "PurchasePrice", "Quantity", "SellingPrice", "TransactionId", "Unit" },
+                values: new object[] { 6, "Krzesło", 20m, 6.0, 0m, null, null });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "ItemId", "Name", "PurchasePrice", "Quantity", "SellingPrice", "TransactionId", "Unit" },
+                values: new object[] { 7, "Piwo", 6m, 666.0, 0m, null, null });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "ItemId", "Name", "PurchasePrice", "Quantity", "SellingPrice", "TransactionId", "Unit" },
+                values: new object[] { 8, "Pizza", 25m, 85.0, 0m, null, null });
 
             migrationBuilder.InsertData(
                 table: "Transactions",
-                columns: new[] { "TransactionId", "CustomerId", "EmployeeId", "TransactionDate", "TransactionType" },
-                values: new object[] { 1, 0, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 });
+                columns: new[] { "TransactionId", "TransactionDate", "TransactionType" },
+                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2 });
+
+            migrationBuilder.InsertData(
+                table: "Transactions",
+                columns: new[] { "TransactionId", "TransactionDate", "TransactionType" },
+                values: new object[] { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2 });
+
+            migrationBuilder.InsertData(
+                table: "Transactions",
+                columns: new[] { "TransactionId", "TransactionDate", "TransactionType" },
+                values: new object[] { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 });
+
+            migrationBuilder.InsertData(
+                table: "Transactions",
+                columns: new[] { "TransactionId", "TransactionDate", "TransactionType" },
+                values: new object[] { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 });
 
             migrationBuilder.InsertData(
                 table: "TransactionsItems",
                 columns: new[] { "TransactionItemId", "ItemId", "TransactionId" },
-                values: new object[] { 1, 2, 1 });
+                values: new object[] { 1, 1, 1 });
 
             migrationBuilder.InsertData(
                 table: "TransactionsItems",
                 columns: new[] { "TransactionItemId", "ItemId", "TransactionId" },
-                values: new object[] { 2, 1, 1 });
+                values: new object[] { 2, 2, 1 });
+
+            migrationBuilder.InsertData(
+                table: "TransactionsItems",
+                columns: new[] { "TransactionItemId", "ItemId", "TransactionId" },
+                values: new object[] { 3, 3, 2 });
+
+            migrationBuilder.InsertData(
+                table: "TransactionsItems",
+                columns: new[] { "TransactionItemId", "ItemId", "TransactionId" },
+                values: new object[] { 4, 4, 2 });
+
+            migrationBuilder.InsertData(
+                table: "TransactionsItems",
+                columns: new[] { "TransactionItemId", "ItemId", "TransactionId" },
+                values: new object[] { 5, 5, 3 });
+
+            migrationBuilder.InsertData(
+                table: "TransactionsItems",
+                columns: new[] { "TransactionItemId", "ItemId", "TransactionId" },
+                values: new object[] { 6, 6, 3 });
+
+            migrationBuilder.InsertData(
+                table: "TransactionsItems",
+                columns: new[] { "TransactionItemId", "ItemId", "TransactionId" },
+                values: new object[] { 7, 7, 4 });
+
+            migrationBuilder.InsertData(
+                table: "TransactionsItems",
+                columns: new[] { "TransactionItemId", "ItemId", "TransactionId" },
+                values: new object[] { 8, 8, 4 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Items_TransactionId",

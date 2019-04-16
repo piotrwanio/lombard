@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lombard.DAL.Migrations
 {
     [DbContext(typeof(EFDbContext))]
-    [Migration("20190416084444_init")]
+    [Migration("20190416105217_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,8 +42,14 @@ namespace Lombard.DAL.Migrations
                     b.ToTable("Items");
 
                     b.HasData(
-                        new { ItemId = 1, Name = "Kubek", PurchasePrice = 100m, Quantity = 2.0, SellingPrice = 0m },
-                        new { ItemId = 2, Name = "Kubek2", PurchasePrice = 100m, Quantity = 2.0, SellingPrice = 0m }
+                        new { ItemId = 1, Name = "Kubek", PurchasePrice = 15m, Quantity = 2.0, SellingPrice = 0m },
+                        new { ItemId = 2, Name = "Długopis", PurchasePrice = 5m, Quantity = 15.0, SellingPrice = 0m },
+                        new { ItemId = 3, Name = "Kawa", PurchasePrice = 40m, Quantity = 5.0, SellingPrice = 0m },
+                        new { ItemId = 4, Name = "Ciastka", PurchasePrice = 2m, Quantity = 85.0, SellingPrice = 0m },
+                        new { ItemId = 5, Name = "Ładowarka", PurchasePrice = 30m, Quantity = 2.0, SellingPrice = 0m },
+                        new { ItemId = 6, Name = "Krzesło", PurchasePrice = 20m, Quantity = 6.0, SellingPrice = 0m },
+                        new { ItemId = 7, Name = "Piwo", PurchasePrice = 6m, Quantity = 666.0, SellingPrice = 0m },
+                        new { ItemId = 8, Name = "Pizza", PurchasePrice = 25m, Quantity = 85.0, SellingPrice = 0m }
                     );
                 });
 
@@ -51,10 +57,6 @@ namespace Lombard.DAL.Migrations
                 {
                     b.Property<int?>("TransactionId")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int>("CustomerId");
-
-                    b.Property<int>("EmployeeId");
 
                     b.Property<DateTime>("TransactionDate");
 
@@ -65,7 +67,10 @@ namespace Lombard.DAL.Migrations
                     b.ToTable("Transactions");
 
                     b.HasData(
-                        new { TransactionId = 1, CustomerId = 0, EmployeeId = 0, TransactionDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), TransactionType = 0 }
+                        new { TransactionId = 1, TransactionDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), TransactionType = 2 },
+                        new { TransactionId = 2, TransactionDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), TransactionType = 2 },
+                        new { TransactionId = 3, TransactionDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), TransactionType = 1 },
+                        new { TransactionId = 4, TransactionDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), TransactionType = 1 }
                     );
                 });
 
@@ -87,8 +92,14 @@ namespace Lombard.DAL.Migrations
                     b.ToTable("TransactionsItems");
 
                     b.HasData(
-                        new { TransactionItemId = 1, ItemId = 2, TransactionId = 1 },
-                        new { TransactionItemId = 2, ItemId = 1, TransactionId = 1 }
+                        new { TransactionItemId = 1, ItemId = 1, TransactionId = 1 },
+                        new { TransactionItemId = 2, ItemId = 2, TransactionId = 1 },
+                        new { TransactionItemId = 3, ItemId = 3, TransactionId = 2 },
+                        new { TransactionItemId = 4, ItemId = 4, TransactionId = 2 },
+                        new { TransactionItemId = 5, ItemId = 5, TransactionId = 3 },
+                        new { TransactionItemId = 6, ItemId = 6, TransactionId = 3 },
+                        new { TransactionItemId = 7, ItemId = 7, TransactionId = 4 },
+                        new { TransactionItemId = 8, ItemId = 8, TransactionId = 4 }
                     );
                 });
 
