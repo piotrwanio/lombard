@@ -21,7 +21,7 @@ namespace Lombard.DAL.Tests
         public void AddItem_CorrectItem_Success()
         {
             //arrange
-            EFDbContext context = new EFDbContext();
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
             ItemRepository itemRepository = new ItemRepository(context);
             Item item = new Item
             {
@@ -80,7 +80,7 @@ namespace Lombard.DAL.Tests
         public void Delete_CorrectItem_Success()
         {
             //arrange
-            EFDbContext context = new EFDbContext();
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
             ItemRepository itemRepository = new ItemRepository(context);
             Item item = new Item
             {
@@ -101,8 +101,9 @@ namespace Lombard.DAL.Tests
         public void Delete_InvalidItem_Success()
         {
             //arrange
-            EFDbContext context = new EFDbContext();
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
             ItemRepository itemRepository = new ItemRepository(context);
+
             Item item = new Item
             {
                 Name = "ooo",
@@ -127,8 +128,9 @@ namespace Lombard.DAL.Tests
         public void Update_CorrectItem_Success()
         {
             //arrange
-            EFDbContext context = new EFDbContext();
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
             ItemRepository itemRepository = new ItemRepository(context);
+
             Item item = new Item
             {
                 Name = "ooo",
@@ -147,6 +149,27 @@ namespace Lombard.DAL.Tests
 
             //asserts
             Assert.AreEqual("testesttest", test.Name);
+        }
+
+        private static DbContextOptions<EFDbContext> CreateNewContextOptions()
+        {
+            // The key to keeping the databases unique and not shared is 
+            // generating a unique db name for each.
+            string dbName = Guid.NewGuid().ToString();
+
+            // Create a fresh service provider, and therefore a fresh 
+            // InMemory database instance.
+            var serviceProvider = new ServiceCollection()
+                .AddEntityFrameworkInMemoryDatabase()
+                .BuildServiceProvider();
+
+            // Create a new options instance telling the context to use an
+            // InMemory database and the new service provider.
+            var builder = new DbContextOptionsBuilder<EFDbContext>();
+            builder.UseInMemoryDatabase(dbName)
+                   .UseInternalServiceProvider(serviceProvider);
+
+            return builder.Options;
         }
     }
 

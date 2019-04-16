@@ -21,8 +21,8 @@ namespace Lombard.DAL.Tests
         {
             //arrange
             EFDbContext context = new EFDbContext(CreateNewContextOptions());
-            TransactionRepository transactionRepository = new TransactionRepository(context); 
-            ItemRepository  itemRepository = new ItemRepository(context); 
+            TransactionRepository transactionRepository = new TransactionRepository(context);
+            ItemRepository itemRepository = new ItemRepository(context);
 
             Item item = new Item
             {
@@ -38,10 +38,10 @@ namespace Lombard.DAL.Tests
                 PurchasePrice = 888,
                 Quantity = 8
             };
-            
+
             Transaction transaction = new Transaction
             {
-                Items = new List<Item> { item, item2 },              
+                Items = new List<Item> { item, item2 },
             };
 
             Transaction transaction2 = new Transaction
@@ -74,7 +74,7 @@ namespace Lombard.DAL.Tests
         public void GetTransactions_All_Success()
         {
             //arrange
-            EFDbContext context = new EFDbContext();
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
             TransactionRepository transactionRepository = new TransactionRepository(context);
 
             //act
@@ -83,15 +83,18 @@ namespace Lombard.DAL.Tests
             {
                 new Transaction {
                        TransactionId = 1,
-                       TransactionDate = new DateTime(2019,11,12)
+                       TransactionDate = new DateTime(2019,11,12),
+                       Items = new List<Item>()
                         },
                 new Transaction {
                         TransactionId = 2,
-                       TransactionDate = new DateTime(2018,11,12)
+                        TransactionDate = new DateTime(2018,11,12),
+                        Items = new List<Item>()
                         },
                 new Transaction {
                         TransactionId = 3,
-                       TransactionDate = new DateTime(2017,11,12)
+                       TransactionDate = new DateTime(2017,11,12),
+                        Items = new List<Item>()
                         },
             };
 
@@ -99,8 +102,7 @@ namespace Lombard.DAL.Tests
             var result = transactionRepository.GetTransactions();
 
             //asserts
-            //Assert.NotNull(result);
-            ///
+            Assert.NotNull(result);
         }
 
         private static DbContextOptions<EFDbContext> CreateNewContextOptions()
