@@ -34,7 +34,7 @@ namespace Lombard.API.Controllers
         }
 
         [HttpGet("")]
-        public ActionResult<List<StockViewModel>> GetAllItems()
+        public ActionResult<List<Item>> GetAllItems()
         {
             return _itemService.GetItems().ToList();
         }
