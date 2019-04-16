@@ -2,6 +2,7 @@
 using Lombard.DAL.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Lombard.DAL.Repositories.Implementations
@@ -41,6 +42,7 @@ namespace Lombard.DAL.Repositories.Implementations
             }
             catch (Exception e)
             {
+                Debug.WriteLine(e.Message);
                 return false;
             }
 

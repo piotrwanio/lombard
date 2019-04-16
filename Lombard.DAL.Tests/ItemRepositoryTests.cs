@@ -17,137 +17,160 @@ namespace Lombard.DAL.Tests
         {
         }
 
-        //[Test]
-        //public void AddItem_CorrectItem_Success()
-        //{
-        //    //arrange
-        //    EFDbContext context = new EFDbContext();
-        //    ItemRepository itemRepository = new ItemRepository(context);
-        //    Item item = new Item
-        //    {
-        //        Name = "ooo",
-        //        PurchasePrice = 888,
-        //        Quantity = 8
-        //    };
+        [Test]
+        public void AddItem_CorrectItem_Success()
+        {
+            //arrange
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
+            ItemRepository itemRepository = new ItemRepository(context);
+            Item item = new Item
+            {
+                Name = "ooo",
+                PurchasePrice = 888,
+                Quantity = 8
+            };
 
-        //    var items = new List<Item>
-        //    {
-        //        new Item {
-        //                Name = "ooo",
-        //                PurchasePrice = 888,
-        //                Quantity = 8
-        //                },
-        //        new Item {
-        //                Name = "asd",
-        //                PurchasePrice = 666,
-        //                Quantity = 6
-        //                },
-        //        new Item {
-        //                Name = "qwe",
-        //                PurchasePrice = 555,
-        //                Quantity = 5
-        //                },
-        //        new Item
-        //        {
-        //                Name = "zxc",
-        //                PurchasePrice = 999,
-        //                Quantity = 9
-        //        },
-        //        new Item
-        //        {
-        //                Name = "fgh",
-        //                PurchasePrice = 111,
-        //                Quantity = 1
-        //        },
-        //        new Item {
-        //                Name = "rty",
-        //                PurchasePrice = 777,
-        //                Quantity = 7
-        //        }
-        //    };
+            var items = new List<Item>
+            {
+                new Item {
+                        Name = "ooo",
+                        PurchasePrice = 888,
+                        Quantity = 8
+                        },
+                new Item {
+                        Name = "asd",
+                        PurchasePrice = 666,
+                        Quantity = 6
+                        },
+                new Item {
+                        Name = "qwe",
+                        PurchasePrice = 555,
+                        Quantity = 5
+                        },
+                new Item
+                {
+                        Name = "zxc",
+                        PurchasePrice = 999,
+                        Quantity = 9
+                },
+                new Item
+                {
+                        Name = "fgh",
+                        PurchasePrice = 111,
+                        Quantity = 1
+                },
+                new Item {
+                        Name = "rty",
+                        PurchasePrice = 777,
+                        Quantity = 7
+                }
+            };
 
-        //    items.ForEach(i => itemRepository.AddItem(i));
+            items.ForEach(i => itemRepository.AddItem(i));
 
 
-        //    //act
-        //    var result = itemRepository.AddItem(item);
+            //act
+            var result = itemRepository.AddItem(item);
 
-        //    //asserts
-        //    Assert.AreEqual(true, result);
-        //}
+            //asserts
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void Delete_CorrectItem_Success()
-        //{
-        //    //arrange
-        //    EFDbContext context = new EFDbContext();
-        //    ItemRepository itemRepository = new ItemRepository(context);
-        //    Item item = new Item
-        //    {
-        //        Name = "ooo",
-        //        PurchasePrice = 888,
-        //        Quantity = 8
-        //    };
+        [Test]
+        public void Delete_CorrectItem_Success()
+        {
+            //arrange
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
+            ItemRepository itemRepository = new ItemRepository(context);
+            Item item = new Item
+            {
+                Name = "ooo",
+                PurchasePrice = 888,
+                Quantity = 8
+            };
 
-        //    //act
-        //    itemRepository.AddItem(item);
-        //    var result = itemRepository.DeleteItem(item);
+            //act
+            itemRepository.AddItem(item);
+            var result = itemRepository.DeleteItem(item);
 
-        //    //asserts
-        //    Assert.AreEqual(true, result);
-        //}
+            //asserts
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void Delete_InvalidItem_Success()
-        //{
-        //    //arrange
-        //    EFDbContext context = new EFDbContext();
-        //    ItemRepository itemRepository = new ItemRepository(context);
-        //    Item item = new Item
-        //    {
-        //        Name = "ooo",
-        //        PurchasePrice = 888,
-        //        Quantity = 8
-        //    };
-        //    Item item2 = new Item
-        //    {
-        //        Name = "ooo",
-        //        PurchasePrice = 888,
-        //        Quantity = 8
-        //    };
+        [Test]
+        public void Delete_InvalidItem_Success()
+        {
+            //arrange
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
+            ItemRepository itemRepository = new ItemRepository(context);
 
-        //    //act
-        //    itemRepository.AddItem(item);
+            Item item = new Item
+            {
+                Name = "ooo",
+                PurchasePrice = 888,
+                Quantity = 8
+            };
+            Item item2 = new Item
+            {
+                Name = "ooo",
+                PurchasePrice = 888,
+                Quantity = 8
+            };
 
-        //    //asserts
-        //    Assert.Throws<Exception>(() => { itemRepository.DeleteItem(item2); });
-        //}
+            //act
+            itemRepository.AddItem(item);
 
-        //[Test]
-        //public void Update_CorrectItem_Success()
-        //{
-        //    //arrange
-        //    EFDbContext context = new EFDbContext();
-        //    ItemRepository itemRepository = new ItemRepository(context);
-        //    Item item = new Item
-        //    {
-        //        Name = "ooo",
-        //        PurchasePrice = 888,
-        //        Quantity = 8
-        //    };
+            //asserts
+            Assert.Throws<Exception>(() => { itemRepository.DeleteItem(item2); });
+        }
 
-        //    //act
-        //    itemRepository.AddItem(item);
-        //    var itemFromDb = itemRepository.GetItemById(item.ItemId.Value);
+        [Test]
+        public void Update_CorrectItem_Success()
+        {
+            //arrange
+            EFDbContext context = new EFDbContext(CreateNewContextOptions());
+            ItemRepository itemRepository = new ItemRepository(context);
 
-        //    itemFromDb.Name = "testesttest";
-        //    var result = itemRepository.UpdateItem(itemFromDb);
+            Item item = new Item
+            {
+                Name = "ooo",
+                PurchasePrice = 888,
+                Quantity = 8
+            };
 
-        //    var test = itemRepository.GetItemById(itemFromDb.ItemId.Value);
+            //act
+            itemRepository.AddItem(item);
+            var itemFromDb = itemRepository.GetItemById(item.ItemId.Value);
 
-        //    //asserts
-        //    Assert.AreEqual("testesttest", test.Name);
-        //}
+            itemFromDb.Name = "testesttest";
+            var result = itemRepository.UpdateItem(itemFromDb);
+
+            var test = itemRepository.GetItemById(itemFromDb.ItemId.Value);
+
+            //asserts
+            Assert.AreEqual("testesttest", test.Name);
+        }
+
+        private static DbContextOptions<EFDbContext> CreateNewContextOptions()
+        {
+            // The key to keeping the databases unique and not shared is 
+            // generating a unique db name for each.
+            string dbName = Guid.NewGuid().ToString();
+
+            // Create a fresh service provider, and therefore a fresh 
+            // InMemory database instance.
+            var serviceProvider = new ServiceCollection()
+                .AddEntityFrameworkInMemoryDatabase()
+                .BuildServiceProvider();
+
+            // Create a new options instance telling the context to use an
+            // InMemory database and the new service provider.
+            var builder = new DbContextOptionsBuilder<EFDbContext>();
+            builder.UseInMemoryDatabase(dbName)
+                   .UseInternalServiceProvider(serviceProvider);
+
+            return builder.Options;
+        }
     }
 
 
