@@ -2,6 +2,7 @@
 using Lombard.BLL.ViewModels;
 using Lombard.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace Lombard.API.Controllers
@@ -24,15 +25,15 @@ namespace Lombard.API.Controllers
         }
 
         [HttpGet("{dateTime}")]
-        public ActionResult<Report> GetReportFromDate(string dateTime)
+        public ActionResult<Report> GetReportFromDate(DateTime dateTime)
         {
-            return _reportService.GenerateReport();
+            return _reportService.GenerateReport(dateTime);
         }
 
         [HttpGet("{fromTime}/{toTime}")]
-        public ActionResult<Report> GetReportFromTimeScope()
+        public ActionResult<Report> GetReportFromTimeScope(DateTime fromTime, DateTime toTime)
         {
-            return _reportService.GenerateReport();
+            return _reportService.GenerateReport(fromTime, toTime);
         }
     }
 }

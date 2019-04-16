@@ -1,11 +1,12 @@
 ﻿using Lombard.BLL.ViewModels;
+using System;
 
 namespace Lombard.BLL.Services
 {
     public interface IReportService
     {
         Report GenerateReport();
-        Report GenerateReport(string dateTime);
-        Report GenerateReport(string fromTime, string toTime);
+        Report GenerateReport(DateTime dateTime);
+        Report GenerateReport(DateTime fromTime, DateTime toTime);
     }
 }

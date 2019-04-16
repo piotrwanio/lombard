@@ -10,80 +10,97 @@ namespace Lombard.BLL.Services
     public class ReportService : IReportService
     {
         private readonly ITransactionRepository _transactionRepository;
+        private readonly IItemRepository _itemRepository;
 
-        public ReportService(ITransactionRepository transactionRepository)
-        {           
+        public ReportService(ITransactionRepository transactionRepository, IItemRepository itemRepository)
+        {
             _transactionRepository = transactionRepository;
+            _itemRepository = itemRepository;
         }
 
         public Report GenerateReport()
         {
             var transactions = _transactionRepository.GetTransactions();
+            var items = _itemRepository.GetItems();
+
             return new Report
             {
-                MissingItems = GetMissingItems(transactions),
+                MissingItems = GetMissingItems(items),
                 Profit = GetTotalProfit(transactions),
                 SalesTurnover = GetTotalSalesTurnover(transactions),
-                StockState = GetStockStatus(transactions)
+                StockState = GetStockStatus(items),
+                PurchaseTransactions = GetPurchaseTransactions(transactions),
+                SellingTransactions = GetSellingTransactions(transactions)
             };
         }
 
-        public Report GenerateReport(string dateTime)
+        public Report GenerateReport(DateTime dateTime)
         {
             var transactions = _transactionRepository.GetTransactions()
-                .Where(t => t.TransactionDate == DateTime.Parse(dateTime))
+                .Where(t => t.TransactionDate == dateTime)
                 .ToList();
+            var items = _itemRepository.GetItems();
 
             return new Report
             {
-                MissingItems = GetMissingItems(transactions),
+                MissingItems = GetMissingItems(items),
                 Profit = GetTotalProfit(transactions),
                 SalesTurnover = GetTotalSalesTurnover(transactions),
-                StockState = GetStockStatus(transactions)
+                StockState = GetStockStatus(items),
+                PurchaseTransactions = GetPurchaseTransactions(transactions),
+                SellingTransactions = GetSellingTransactions(transactions)
             };
         }
 
-        public Report GenerateReport(string fromTime, string toTime)
+        public Report GenerateReport(DateTime fromTime, DateTime toTime)
         {
             var transactions = _transactionRepository.GetTransactions()
-                .Where(t => t.TransactionDate > DateTime.Parse(fromTime) && t.TransactionDate < DateTime.Parse(toTime))
+                .Where(t => t.TransactionDate >= fromTime && t.TransactionDate <= toTime)
                 .ToList();
+            var items = _itemRepository.GetItems();
 
             return new Report
             {
-                MissingItems = GetMissingItems(transactions),
+                MissingItems = GetMissingItems(items),
                 Profit = GetTotalProfit(transactions),
                 SalesTurnover = GetTotalSalesTurnover(transactions),
-                StockState = GetStockStatus(transactions)
+                StockState = GetStockStatus(items),
+                PurchaseTransactions = GetPurchaseTransactions(transactions),
+                SellingTransactions = GetSellingTransactions(transactions)
             };
         }
 
         private decimal GetTotalSalesTurnover(IList<Transaction> transactions)
         {
-            return transactions.Sum(x => x.Items.Sum(i => i.PurchasePrice));
+            return transactions.Sum(t => t.Items.Sum(i => i.PurchasePrice * (decimal)i.Quantity));
         }
 
         private decimal GetTotalProfit(IList<Transaction> transactions)
         {
-            //return transactions.Sum(x => x.Items.Sum(i => i.SellingPrice - i.PurchasePrice));
-            return 10000000M;
+            var purchaseTransactions = GetPurchaseTransactions(transactions);
+            var sellingTransactions = GetSellingTransactions(transactions);
+
+            var pTSum = purchaseTransactions.ToList().Sum(t => t.Items.Sum(i => i.PurchasePrice * (decimal)i.Quantity));
+            var STSum = sellingTransactions.ToList().Sum(t => t.Items.Sum(i => i.PurchasePrice * (decimal)i.Quantity));
+
+            return STSum - pTSum;
         }
 
-        private IList<Item> GetStockStatus(IList<Transaction> transactions)
+        private IList<Item> GetStockStatus(IList<Item> items) => items;
+
+        private IList<Item> GetMissingItems(IList<Item> items)
         {
-            var items = new List<Item>();
-            transactions.ToList().ForEach(t => items.AddRange(t.Items));
-            return items;
+            return items.Where(i => i.Quantity <= 3).ToList();
         }
 
-        private IList<Item> GetMissingItems(IList<Transaction> transactions)
+        private IList<Transaction> GetPurchaseTransactions(IList<Transaction> transactions)
         {
-            var items = new List<Item>();
-            transactions.ToList()
-                .ForEach(t => items
-                .AddRange(t.Items
-                .Where(i => i.Quantity <3)));
-            return items;
+            return transactions.Where(t => t.TransactionType == TransactionType.Purchase).ToList();
+        }
+
+        private IList<Transaction> GetSellingTransactions(IList<Transaction> transactions)
+        {
+            return transactions.Where(t => t.TransactionType == TransactionType.Sell).ToList();
         }
     }
 }

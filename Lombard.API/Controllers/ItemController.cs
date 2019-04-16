@@ -2,6 +2,7 @@
 using Lombard.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lombard.API.Controllers
 {
@@ -34,7 +35,7 @@ namespace Lombard.API.Controllers
         [HttpGet("")]
         public ActionResult<List<Item>> GetAllItems()
         {
-            return _itemService.GetItems();
+            return _itemService.GetItems().ToList();
         }
 
         [HttpPut("")]

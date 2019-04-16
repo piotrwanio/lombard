@@ -39,7 +39,7 @@ namespace Lombard.API
                 });
 
             services.AddScoped<IItemRepository, ItemRepository>();
-            services.AddScoped<ITransactionRepository, TransactionRepository>();
+            services.AddScoped<ITransactionRepository, FakeTransactionRepository>();
 
             services.AddScoped<ITransactionService, TransactionService>();
             services.AddScoped<IItemService, ItemService>();
